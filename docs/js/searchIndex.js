@@ -38,7 +38,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\ArtistController\u003A\u003A\u0024artistService",
             "name": "artistService",
-            "summary": "Artist\u0020service.",
+            "summary": "",
             "url": "classes/App-Controller-ArtistController.html#property_artistService"
         },                {
             "fqsen": "\\App\\Controller\\ArtistController\u003A\u003A\u0024translator",
@@ -83,7 +83,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\CategoryController\u003A\u003A\u0024categoryService",
             "name": "categoryService",
-            "summary": "Category\u0020service.",
+            "summary": "",
             "url": "classes/App-Controller-CategoryController.html#property_categoryService"
         },                {
             "fqsen": "\\App\\Controller\\CategoryController\u003A\u003A\u0024translator",
@@ -128,12 +128,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\CommentController\u003A\u003A\u0024commentService",
             "name": "commentService",
-            "summary": "Comment\u0020service.",
+            "summary": "",
             "url": "classes/App-Controller-CommentController.html#property_commentService"
         },                {
             "fqsen": "\\App\\Controller\\CommentController\u003A\u003A\u0024translator",
             "name": "translator",
-            "summary": "Translator.",
+            "summary": "",
             "url": "classes/App-Controller-CommentController.html#property_translator"
         },                {
             "fqsen": "\\App\\Controller\\CommentController\u003A\u003A\u0024security",
@@ -178,7 +178,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\GenreController\u003A\u003A\u0024genreService",
             "name": "genreService",
-            "summary": "Genre\u0020service.",
+            "summary": "",
             "url": "classes/App-Controller-GenreController.html#property_genreService"
         },                {
             "fqsen": "\\App\\Controller\\GenreController\u003A\u003A\u0024translator",
@@ -203,12 +203,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\RegistrationController\u003A\u003A\u0024userService",
             "name": "userService",
-            "summary": "User\u0020service.",
+            "summary": "",
             "url": "classes/App-Controller-RegistrationController.html#property_userService"
         },                {
             "fqsen": "\\App\\Controller\\RegistrationController\u003A\u003A\u0024translator",
             "name": "translator",
-            "summary": "Translator.",
+            "summary": "",
             "url": "classes/App-Controller-RegistrationController.html#property_translator"
         },                {
             "fqsen": "\\App\\Controller\\SecurityController",
@@ -263,12 +263,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\TagController\u003A\u003A\u0024tagService",
             "name": "tagService",
-            "summary": "Tag\u0020service.",
+            "summary": "",
             "url": "classes/App-Controller-TagController.html#property_tagService"
         },                {
             "fqsen": "\\App\\Controller\\TagController\u003A\u003A\u0024translator",
             "name": "translator",
-            "summary": "Translator.",
+            "summary": "",
             "url": "classes/App-Controller-TagController.html#property_translator"
         },                {
             "fqsen": "\\App\\Controller\\TaskController",
@@ -316,19 +316,39 @@ Search.appendIndex(
             "summary": "Get\u0020filters\u0020from\u0020request.",
             "url": "classes/App-Controller-TaskController.html#method_getFilters"
         },                {
+            "fqsen": "\\App\\Controller\\TaskController\u003A\u003A\u0024requestStack",
+            "name": "requestStack",
+            "summary": "",
+            "url": "classes/App-Controller-TaskController.html#property_requestStack"
+        },                {
+            "fqsen": "\\App\\Controller\\TaskController\u003A\u003A\u0024guestUserService",
+            "name": "guestUserService",
+            "summary": "",
+            "url": "classes/App-Controller-TaskController.html#property_guestUserService"
+        },                {
+            "fqsen": "\\App\\Controller\\TaskController\u003A\u003A\u0024taskRepository",
+            "name": "taskRepository",
+            "summary": "",
+            "url": "classes/App-Controller-TaskController.html#property_taskRepository"
+        },                {
+            "fqsen": "\\App\\Controller\\TaskController\u003A\u003A\u0024tokenStorage",
+            "name": "tokenStorage",
+            "summary": "",
+            "url": "classes/App-Controller-TaskController.html#property_tokenStorage"
+        },                {
             "fqsen": "\\App\\Controller\\TaskController\u003A\u003A\u0024taskService",
             "name": "taskService",
-            "summary": "Task\u0020service.",
+            "summary": "",
             "url": "classes/App-Controller-TaskController.html#property_taskService"
         },                {
             "fqsen": "\\App\\Controller\\TaskController\u003A\u003A\u0024translator",
             "name": "translator",
-            "summary": "Translator.",
+            "summary": "",
             "url": "classes/App-Controller-TaskController.html#property_translator"
         },                {
             "fqsen": "\\App\\Controller\\TaskController\u003A\u003A\u0024commentService",
             "name": "commentService",
-            "summary": "Comment\u0020service.",
+            "summary": "",
             "url": "classes/App-Controller-TaskController.html#property_commentService"
         },                {
             "fqsen": "\\App\\Controller\\UserController",
@@ -363,17 +383,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\UserController\u003A\u003A\u0024userService",
             "name": "userService",
-            "summary": "User\u0020service.",
+            "summary": "",
             "url": "classes/App-Controller-UserController.html#property_userService"
         },                {
             "fqsen": "\\App\\Controller\\UserController\u003A\u003A\u0024translator",
             "name": "translator",
-            "summary": "Translator.",
+            "summary": "",
             "url": "classes/App-Controller-UserController.html#property_translator"
         },                {
             "fqsen": "\\App\\Controller\\UserController\u003A\u003A\u0024passwordHasher",
             "name": "passwordHasher",
-            "summary": "Password\u0020hasher.",
+            "summary": "",
             "url": "classes/App-Controller-UserController.html#property_passwordHasher"
         },                {
             "fqsen": "\\App\\DataFixtures\\AbstractBaseFixtures",
@@ -401,10 +421,15 @@ Search.appendIndex(
             "summary": "Set\u0020random\u0020reference\u0020to\u0020the\u0020object.",
             "url": "classes/App-DataFixtures-AbstractBaseFixtures.html#method_getRandomReference"
         },                {
-            "fqsen": "\\App\\DataFixtures\\AbstractBaseFixtures\u003A\u003AgetRandomReferences\u0028\u0029",
-            "name": "getRandomReferences",
+            "fqsen": "\\App\\DataFixtures\\AbstractBaseFixtures\u003A\u003AgetRandomReferenceList\u0028\u0029",
+            "name": "getRandomReferenceList",
             "summary": "Get\u0020array\u0020of\u0020objects\u0020references\u0020based\u0020on\u0020count.",
-            "url": "classes/App-DataFixtures-AbstractBaseFixtures.html#method_getRandomReferences"
+            "url": "classes/App-DataFixtures-AbstractBaseFixtures.html#method_getRandomReferenceList"
+        },                {
+            "fqsen": "\\App\\DataFixtures\\AbstractBaseFixtures\u003A\u003AgetReferenceNameListByClassName\u0028\u0029",
+            "name": "getReferenceNameListByClassName",
+            "summary": "Get\u0020reference\u0020name\u0020list\u0020by\u0020class\u0020name.",
+            "url": "classes/App-DataFixtures-AbstractBaseFixtures.html#method_getReferenceNameListByClassName"
         },                {
             "fqsen": "\\App\\DataFixtures\\AbstractBaseFixtures\u003A\u003A\u0024faker",
             "name": "faker",
@@ -415,11 +440,6 @@ Search.appendIndex(
             "name": "manager",
             "summary": "Persistence\u0020object\u0020manager.",
             "url": "classes/App-DataFixtures-AbstractBaseFixtures.html#property_manager"
-        },                {
-            "fqsen": "\\App\\DataFixtures\\AbstractBaseFixtures\u003A\u003A\u0024referencesIndex",
-            "name": "referencesIndex",
-            "summary": "Object\u0020reference\u0020index.",
-            "url": "classes/App-DataFixtures-AbstractBaseFixtures.html#property_referencesIndex"
         },                {
             "fqsen": "\\App\\DataFixtures\\ArtistFixtures",
             "name": "ArtistFixtures",
@@ -518,7 +538,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\UserFixtures\u003A\u003A\u0024passwordHasher",
             "name": "passwordHasher",
-            "summary": "Password\u0020hasher.",
+            "summary": "",
             "url": "classes/App-DataFixtures-UserFixtures.html#property_passwordHasher"
         },                {
             "fqsen": "\\App\\Entity\\Artist",
@@ -701,11 +721,6 @@ Search.appendIndex(
             "summary": "Class\u0020Comment.",
             "url": "classes/App-Entity-Comment.html"
         },                {
-            "fqsen": "\\App\\Entity\\Comment\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Comment\u0020constructor.",
-            "url": "classes/App-Entity-Comment.html#method___construct"
-        },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
             "summary": "Getter\u0020for\u0020the\u0020ID.",
@@ -713,42 +728,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
-            "summary": "Getter\u0020for\u0020the\u0020content.",
+            "summary": "Getter\u0020for\u0020Content.",
             "url": "classes/App-Entity-Comment.html#method_getContent"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetContent\u0028\u0029",
             "name": "setContent",
-            "summary": "Setter\u0020for\u0020the\u0020content.",
+            "summary": "Setter\u0020for\u0020Content.",
             "url": "classes/App-Entity-Comment.html#method_setContent"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetAuthor\u0028\u0029",
             "name": "getAuthor",
-            "summary": "Getter\u0020for\u0020the\u0020author.",
+            "summary": "Getter\u0020for\u0020Author.",
             "url": "classes/App-Entity-Comment.html#method_getAuthor"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetAuthor\u0028\u0029",
             "name": "setAuthor",
-            "summary": "Setter\u0020for\u0020the\u0020author.",
+            "summary": "Setter\u0020for\u0020Author.",
             "url": "classes/App-Entity-Comment.html#method_setAuthor"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetNick\u0028\u0029",
             "name": "getNick",
-            "summary": "Getter\u0020for\u0020the\u0020nickname.",
+            "summary": "Getter\u0020for\u0020Nick.",
             "url": "classes/App-Entity-Comment.html#method_getNick"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetNick\u0028\u0029",
             "name": "setNick",
-            "summary": "Setter\u0020for\u0020the\u0020nickname.",
+            "summary": "Setter\u0020for\u0020Nick.",
             "url": "classes/App-Entity-Comment.html#method_setNick"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetTask\u0028\u0029",
             "name": "getTask",
-            "summary": "Getter\u0020for\u0020the\u0020task.",
+            "summary": "Getter\u0020for\u0020Task.",
             "url": "classes/App-Entity-Comment.html#method_getTask"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetTask\u0028\u0029",
             "name": "setTask",
-            "summary": "Setter\u0020for\u0020the\u0020task.",
+            "summary": "Setter\u0020for\u0020Task.",
             "url": "classes/App-Entity-Comment.html#method_setTask"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003A\u0024id",
@@ -773,7 +788,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003A\u0024author",
             "name": "author",
-            "summary": "User.",
+            "summary": "Author.",
             "url": "classes/App-Entity-Comment.html#property_author"
         },                {
             "fqsen": "\\App\\Entity\\Enum\\UserRole",
@@ -789,12 +804,12 @@ Search.appendIndex(
             "fqsen": "\\App\\Entity\\Enum\\UserRole\u003A\u003AROLE_USER",
             "name": "ROLE_USER",
             "summary": "",
-            "url": ""
+            "url": "classes/App-Entity-Enum-UserRole.html#enumcase_ROLE_USER"
         },                {
             "fqsen": "\\App\\Entity\\Enum\\UserRole\u003A\u003AROLE_ADMIN",
             "name": "ROLE_ADMIN",
             "summary": "",
-            "url": ""
+            "url": "classes/App-Entity-Enum-UserRole.html#enumcase_ROLE_ADMIN"
         },                {
             "fqsen": "\\App\\Entity\\Genre",
             "name": "Genre",
@@ -1233,7 +1248,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Form\\DataTransformer\\TagsDataTransformer\u003A\u003A\u0024tagService",
             "name": "tagService",
-            "summary": "Tag\u0020service.",
+            "summary": "",
             "url": "classes/App-Form-DataTransformer-TagsDataTransformer.html#property_tagService"
         },                {
             "fqsen": "\\App\\Form\\Type\\ArtistType",
@@ -1378,7 +1393,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Form\\Type\\TaskType\u003A\u003A\u0024tagsDataTransformer",
             "name": "tagsDataTransformer",
-            "summary": "Tags\u0020data\u0020transformer.",
+            "summary": "",
             "url": "classes/App-Form-Type-TaskType.html#property_tagsDataTransformer"
         },                {
             "fqsen": "\\App\\Form\\Type\\UserEmailType",
@@ -1758,7 +1773,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003A\u0024urlGenerator",
             "name": "urlGenerator",
-            "summary": "URL\u0020Generator.",
+            "summary": "",
             "url": "classes/App-Security-LoginFormAuthenticator.html#property_urlGenerator"
         },                {
             "fqsen": "\\App\\Security\\Voter\\TaskVoter",
@@ -1818,7 +1833,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Security\\Voter\\TaskVoter\u003A\u003A\u0024security",
             "name": "security",
-            "summary": "Security\u0020helper.",
+            "summary": "",
             "url": "classes/App-Security-Voter-TaskVoter.html#property_security"
         },                {
             "fqsen": "\\App\\Security\\Voter\\UserVoter",
@@ -1858,7 +1873,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003A\u0024security",
             "name": "security",
-            "summary": "Security.",
+            "summary": "",
             "url": "classes/App-Security-Voter-UserVoter.html#property_security"
         },                {
             "fqsen": "\\App\\Service\\ArtistService",
@@ -1893,22 +1908,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\ArtistService\u003A\u003A\u0024artistRepository",
             "name": "artistRepository",
-            "summary": "Artist\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-ArtistService.html#property_artistRepository"
         },                {
             "fqsen": "\\App\\Service\\ArtistService\u003A\u003A\u0024taskRepository",
             "name": "taskRepository",
-            "summary": "Task\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-ArtistService.html#property_taskRepository"
         },                {
             "fqsen": "\\App\\Service\\ArtistService\u003A\u003A\u0024paginator",
             "name": "paginator",
-            "summary": "Paginator.",
+            "summary": "",
             "url": "classes/App-Service-ArtistService.html#property_paginator"
         },                {
             "fqsen": "\\App\\Service\\ArtistService\u003A\u003A\u0024entityManager",
             "name": "entityManager",
-            "summary": "Entity\u0020Manager.",
+            "summary": "",
             "url": "classes/App-Service-ArtistService.html#property_entityManager"
         },                {
             "fqsen": "\\App\\Service\\ArtistServiceInterface",
@@ -1973,22 +1988,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\CategoryService\u003A\u003A\u0024categoryRepository",
             "name": "categoryRepository",
-            "summary": "Category\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-CategoryService.html#property_categoryRepository"
         },                {
             "fqsen": "\\App\\Service\\CategoryService\u003A\u003A\u0024taskRepository",
             "name": "taskRepository",
-            "summary": "Task\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-CategoryService.html#property_taskRepository"
         },                {
             "fqsen": "\\App\\Service\\CategoryService\u003A\u003A\u0024paginator",
             "name": "paginator",
-            "summary": "Paginator.",
+            "summary": "",
             "url": "classes/App-Service-CategoryService.html#property_paginator"
         },                {
             "fqsen": "\\App\\Service\\CategoryService\u003A\u003A\u0024entityManager",
             "name": "entityManager",
-            "summary": "Entity\u0020Manager.",
+            "summary": "",
             "url": "classes/App-Service-CategoryService.html#property_entityManager"
         },                {
             "fqsen": "\\App\\Service\\CategoryServiceInterface",
@@ -2048,17 +2063,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\CommentService\u003A\u003A\u0024commentRepository",
             "name": "commentRepository",
-            "summary": "Comment\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-CommentService.html#property_commentRepository"
         },                {
             "fqsen": "\\App\\Service\\CommentService\u003A\u003A\u0024paginator",
             "name": "paginator",
-            "summary": "Paginator.",
+            "summary": "",
             "url": "classes/App-Service-CommentService.html#property_paginator"
         },                {
             "fqsen": "\\App\\Service\\CommentService\u003A\u003A\u0024taskRepository",
             "name": "taskRepository",
-            "summary": "Task\u0020Repository.",
+            "summary": "",
             "url": "classes/App-Service-CommentService.html#property_taskRepository"
         },                {
             "fqsen": "\\App\\Service\\CommentServiceInterface",
@@ -2113,22 +2128,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\GenreService\u003A\u003A\u0024genreRepository",
             "name": "genreRepository",
-            "summary": "Genre\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-GenreService.html#property_genreRepository"
         },                {
             "fqsen": "\\App\\Service\\GenreService\u003A\u003A\u0024taskRepository",
             "name": "taskRepository",
-            "summary": "Task\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-GenreService.html#property_taskRepository"
         },                {
             "fqsen": "\\App\\Service\\GenreService\u003A\u003A\u0024paginator",
             "name": "paginator",
-            "summary": "Paginator.",
+            "summary": "",
             "url": "classes/App-Service-GenreService.html#property_paginator"
         },                {
             "fqsen": "\\App\\Service\\GenreService\u003A\u003A\u0024entityManager",
             "name": "entityManager",
-            "summary": "Entity\u0020Manager.",
+            "summary": "",
             "url": "classes/App-Service-GenreService.html#property_entityManager"
         },                {
             "fqsen": "\\App\\Service\\GenreServiceInterface",
@@ -2173,7 +2188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\GuestUserService\u003A\u003A\u0024guestUserRepository",
             "name": "guestUserRepository",
-            "summary": "GuestUser\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-GuestUserService.html#property_guestUserRepository"
         },                {
             "fqsen": "\\App\\Service\\GuestUserServiceInterface",
@@ -2223,12 +2238,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\TagService\u003A\u003A\u0024tagRepository",
             "name": "tagRepository",
-            "summary": "Tag\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-TagService.html#property_tagRepository"
         },                {
             "fqsen": "\\App\\Service\\TagService\u003A\u003A\u0024paginator",
             "name": "paginator",
-            "summary": "Paginator.",
+            "summary": "",
             "url": "classes/App-Service-TagService.html#property_paginator"
         },                {
             "fqsen": "\\App\\Service\\TagServiceInterface",
@@ -2288,22 +2303,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\TaskService\u003A\u003A\u0024categoryService",
             "name": "categoryService",
-            "summary": "Category\u0020service.",
+            "summary": "",
             "url": "classes/App-Service-TaskService.html#property_categoryService"
         },                {
             "fqsen": "\\App\\Service\\TaskService\u003A\u003A\u0024paginator",
             "name": "paginator",
-            "summary": "Paginator.",
+            "summary": "",
             "url": "classes/App-Service-TaskService.html#property_paginator"
         },                {
             "fqsen": "\\App\\Service\\TaskService\u003A\u003A\u0024tagService",
             "name": "tagService",
-            "summary": "Tag\u0020service.",
+            "summary": "",
             "url": "classes/App-Service-TaskService.html#property_tagService"
         },                {
             "fqsen": "\\App\\Service\\TaskService\u003A\u003A\u0024taskRepository",
             "name": "taskRepository",
-            "summary": "Task\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-TaskService.html#property_taskRepository"
         },                {
             "fqsen": "\\App\\Service\\TaskServiceInterface",
@@ -2353,17 +2368,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\UserService\u003A\u003A\u0024userRepository",
             "name": "userRepository",
-            "summary": "User\u0020repository.",
+            "summary": "",
             "url": "classes/App-Service-UserService.html#property_userRepository"
         },                {
             "fqsen": "\\App\\Service\\UserService\u003A\u003A\u0024paginator",
             "name": "paginator",
-            "summary": "Paginator.",
+            "summary": "",
             "url": "classes/App-Service-UserService.html#property_paginator"
         },                {
             "fqsen": "\\App\\Service\\UserService\u003A\u003A\u0024passwordHasher",
             "name": "passwordHasher",
-            "summary": "Password\u0020hasher.",
+            "summary": "",
             "url": "classes/App-Service-UserService.html#property_passwordHasher"
         },                {
             "fqsen": "\\App\\Service\\UserServiceInterface",

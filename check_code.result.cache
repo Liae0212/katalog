@@ -1,7 +1,7 @@
 
-Found 0 of 65 files that can be fixed in 2.658 seconds, 20.00 MB memory used
+Found 0 of 65 files that can be fixed in 2.473 seconds, 20.00 MB memory used
 
-Found 0 of 40 files that can be fixed in 1.902 seconds, 20.00 MB memory used
+Found 0 of 39 files that can be fixed in 1.739 seconds, 20.00 MB memory used
 WARNING: The Symfony standard uses 1 deprecated sniff
 -------------------------------------------------------------------------------
 -  Generic.Functions.CallTimePassByReference
@@ -15,87 +15,6 @@ WARNING: The Symfony standard uses 1 deprecated sniff
    This sniff has been deprecated since v3.12.1 and will be removed in v4.0.0.
 
 Deprecated sniffs are still run, but will stop working at some point in the future.
-
-
-FILE: /home/wwwroot/app/tests/Controller/CategoryControllerTest.php
-----------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
-----------------------------------------------------------------------
- 151 | ERROR | Missing @return tag in function comment
-----------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Controller/CommentControllerTest.php
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOUND 2 ERRORS AFFECTING 2 LINES
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   8 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single blank
-     |       |     line
- 166 | ERROR | [ ] Missing @return tag in function comment
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Controller/UserControllerTest.php
-----------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
-----------------------------------------------------------------------
- 142 | ERROR | Missing @return tag in function comment
-----------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/DataFixtures/AbstractBaseFixturesTest.php
------------------------------------------------------------------------------------------
-FOUND 20 ERRORS AFFECTING 19 LINES
------------------------------------------------------------------------------------------
-  30 | ERROR | Missing @return tag in function comment
-  33 | ERROR | Use parentheses when instantiating classes
-  54 | ERROR | Missing @return tag in function comment
-  55 | ERROR | Declare public methods first,then protected ones and finally private ones
-  78 | ERROR | Doc comment for parameter "$name" missing
-  78 | ERROR | Doc comment for parameter "$entity" missing
-  90 | ERROR | Use parentheses when instantiating classes
- 103 | ERROR | Missing doc comment for function persist()
- 108 | ERROR | Missing doc comment for function flush()
- 113 | ERROR | Missing doc comment for function find()
- 117 | ERROR | Missing doc comment for function remove()
- 121 | ERROR | Missing doc comment for function merge()
- 125 | ERROR | Missing doc comment for function clear()
- 129 | ERROR | Missing doc comment for function detach()
- 133 | ERROR | Missing doc comment for function refresh()
- 137 | ERROR | Missing doc comment for function getRepository()
- 141 | ERROR | Missing doc comment for function getClassMetadata()
- 145 | ERROR | Missing doc comment for function getMetadataFactory()
- 149 | ERROR | Missing doc comment for function initializeObject()
- 153 | ERROR | Missing doc comment for function contains()
------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Service/CommentServiceTest.php
-----------------------------------------------------------------------
-FOUND 3 ERRORS AFFECTING 3 LINES
-----------------------------------------------------------------------
- 147 | ERROR | Missing @return tag in function comment
- 162 | ERROR | Missing @return tag in function comment
- 177 | ERROR | Missing @return tag in function comment
-----------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Service/TaskServiceTest.php
-----------------------------------------------------------------------
-FOUND 7 ERRORS AFFECTING 6 LINES
-----------------------------------------------------------------------
-  91 | ERROR | Missing @return tag in function comment
- 107 | ERROR | Missing @return tag in function comment
- 119 | ERROR | Doc comment for parameter "$user" missing
- 119 | ERROR | Doc comment for parameter "$category" missing
- 121 | ERROR | Missing @return tag in function comment
- 135 | ERROR | Doc comment for parameter "$title" missing
- 137 | ERROR | Missing @return tag in function comment
-----------------------------------------------------------------------
-
-Time: 4.48 secs; Memory: 12MB
 
  ------- -------- ---- ---------------------- 
   State   Domain   Id   Message Preview (en)  
@@ -106,7 +25,7 @@ Time: 4.48 secs; Memory: 12MB
  ------- -------- ---- ---------------------- ------------------------------- 
 
 [notice] Migrating up to DoctrineMigrations\Version20250510125511
-[notice] finished in 1655.5ms, used 26M memory, 1 migrations executed, 18 sql queries
+[notice] finished in 1617.8ms, used 26M memory, 1 migrations executed, 18 sql queries
 
  [OK] Successfully migrated to version: DoctrineMigrations\Version20250510125511                                        
 
