@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * CommentServiceTest.
+ *
+ * Unit tests for the CommentService class.
+ */
+
 namespace App\Tests\Service;
 
 use App\Entity\Category;
@@ -10,88 +16,23 @@ use App\Service\CommentService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
+/**
+ * Testy serwisu CommentService.
+ */
 class CommentServiceTest extends KernelTestCase
 {
     /**
      * Entity manager.
-     *
-     * @var EntityManagerInterface
      */
     private EntityManagerInterface $entityManager;
 
     /**
      * Comment service.
-     *
-     * @var CommentService
      */
     private CommentService $commentService;
 
     /**
-     * Setup before each test.
-     *
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        self::bootKernel();
-
-        $this->entityManager = static::getContainer()->get('doctrine')->getManager();
-        $this->commentService = static::getContainer()->get(CommentService::class);
-    }
-
-    /**
-     * Create a user entity.
-     *
-     * @return User
-     */
-    private function createUser(): User
-    {
-        $user = new User();
-        $user->setEmail('testuser@example.com');
-        $user->setPassword(password_hash('test', PASSWORD_BCRYPT));
-        $user->setRoles(['ROLE_USER']);
-        $this->entityManager->persist($user);
-        $this->entityManager->flush();
-
-        return $user;
-    }
-
-    /**
-     * Create a category entity.
-     *
-     * @return Category
-     */
-    private function createCategory(): Category
-    {
-        $category = new Category();
-        $category->setTitle('Test Category');
-        $this->entityManager->persist($category);
-        $this->entityManager->flush();
-
-        return $category;
-    }
-
-    /**
-     * Create a task entity linked to a category.
-     *
-     * @param Category $category
-     * @return Task
-     */
-    private function createTask(Category $category): Task
-    {
-        $task = new Task();
-        $task->setTitle('Test Task');
-        $task->setCategory($category);
-        $this->entityManager->persist($task);
-        $this->entityManager->flush();
-
-        return $task;
-    }
-
-    /**
      * Test saving a comment.
-     *
-     * @return void
      */
     public function testSave(): void
     {
@@ -114,8 +55,6 @@ class CommentServiceTest extends KernelTestCase
 
     /**
      * Test deleting a comment.
-     *
-     * @return void
      */
     public function testDelete(): void
     {
@@ -142,8 +81,6 @@ class CommentServiceTest extends KernelTestCase
 
     /**
      * Test finding a comment by ID.
-     *
-     * @return void
      */
     public function testFindOneById(): void
     {
@@ -168,8 +105,6 @@ class CommentServiceTest extends KernelTestCase
 
     /**
      * Test getting a paginated list of comments.
-     *
-     * @return void
      */
     public function testGetPaginatedList(): void
     {
@@ -177,9 +112,9 @@ class CommentServiceTest extends KernelTestCase
         $category = $this->createCategory();
         $task = $this->createTask($category);
 
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $comment = new Comment();
-            $comment->setContent('Comment ' . $i);
+            $comment->setContent('Comment '.$i);
             $comment->setNick('Tester');
             $comment->setAuthor($user);
             $comment->setTask($task);
@@ -194,5 +129,60 @@ class CommentServiceTest extends KernelTestCase
 
         $this->assertCount($limit, $paginatedComments->getItems());
         $this->assertEquals(5, $paginatedComments->getTotalItemCount());
+    }
+
+    /**
+     * Setup before each test.
+     */
+    protected function setUp(): void
+    {
+        self::bootKernel();
+
+        $this->entityManager = static::getContainer()->get('doctrine')->getManager();
+        $this->commentService = static::getContainer()->get(CommentService::class);
+    }
+
+    /**
+     * Create a user entity.
+     */
+    private function createUser(): User
+    {
+        $user = new User();
+        $user->setEmail('testuser@example.com');
+        $user->setPassword(password_hash('test', PASSWORD_BCRYPT));
+        $user->setRoles(['ROLE_USER']);
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
+
+        return $user;
+    }
+
+    /**
+     * Create a category entity.
+     */
+    private function createCategory(): Category
+    {
+        $category = new Category();
+        $category->setTitle('Test Category');
+        $this->entityManager->persist($category);
+        $this->entityManager->flush();
+
+        return $category;
+    }
+
+    /**
+     * Create a task entity linked to a category.
+     *
+     * @param Category $category the category entity
+     */
+    private function createTask(Category $category): Task
+    {
+        $task = new Task();
+        $task->setTitle('Test Task');
+        $task->setCategory($category);
+        $this->entityManager->persist($task);
+        $this->entityManager->flush();
+
+        return $task;
     }
 }

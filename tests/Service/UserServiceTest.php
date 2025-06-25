@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * UserServiceTest.
+ *
+ * Unit tests for the UserService class.
+ */
+
 namespace App\Tests\Service;
 
 use App\Entity\User;
@@ -18,22 +24,16 @@ class UserServiceTest extends KernelTestCase
 {
     /**
      * Entity manager.
-     *
-     * @var EntityManagerInterface|null
      */
     private ?EntityManagerInterface $entityManager;
 
     /**
      * User service.
-     *
-     * @var UserServiceInterface|null
      */
     private ?UserServiceInterface $userService;
 
     /**
      * Password hasher service.
-     *
-     * @var UserPasswordHasherInterface|null
      */
     private ?UserPasswordHasherInterface $passwordHasher;
 
@@ -42,8 +42,6 @@ class UserServiceTest extends KernelTestCase
      *
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -56,8 +54,6 @@ class UserServiceTest extends KernelTestCase
 
     /**
      * Test saving a new user.
-     *
-     * @return void
      */
     public function testSaveUser(): void
     {
@@ -77,8 +73,6 @@ class UserServiceTest extends KernelTestCase
 
     /**
      * Test finding a user by email.
-     *
-     * @return void
      */
     public function testFindOneBy(): void
     {
@@ -96,15 +90,13 @@ class UserServiceTest extends KernelTestCase
 
     /**
      * Test paginated list returns correct number of items.
-     *
-     * @return void
      */
     public function testGetPaginatedList(): void
     {
         $page = 1;
         $count = 3;
 
-        for ($i = 0; $i < $count; $i++) {
+        for ($i = 0; $i < $count; ++$i) {
             $user = new User();
             $user->setEmail("user{$i}@example.com");
             $user->setPassword('password');

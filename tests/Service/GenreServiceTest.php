@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * GenreServiceTest.
+ *
+ * Unit tests for the GenreService class.
+ */
+
 namespace App\Tests\Service;
 
 use App\Entity\Genre;
@@ -19,22 +25,16 @@ class GenreServiceTest extends KernelTestCase
 {
     /**
      * Entity manager.
-     *
-     * @var EntityManagerInterface|null
      */
     private ?EntityManagerInterface $entityManager;
 
     /**
      * Genre service.
-     *
-     * @var GenreService|null
      */
     private ?GenreService $genreService;
 
     /**
      * Setup before each test.
-     *
-     * @return void
      */
     public function setUp(): void
     {
@@ -46,8 +46,6 @@ class GenreServiceTest extends KernelTestCase
 
     /**
      * Test saving a Genre entity.
-     *
-     * @return void
      */
     public function testSave(): void
     {
@@ -64,8 +62,6 @@ class GenreServiceTest extends KernelTestCase
 
     /**
      * Test deleting a Genre entity.
-     *
-     * @return void
      */
     public function testDelete(): void
     {
@@ -84,8 +80,6 @@ class GenreServiceTest extends KernelTestCase
 
     /**
      * Test getting paginated list.
-     *
-     * @return void
      */
     public function testGetPaginatedList(): void
     {
@@ -94,7 +88,7 @@ class GenreServiceTest extends KernelTestCase
 
         for ($i = 0; $i < $count; ++$i) {
             $genre = new Genre();
-            $genre->setGenre('Genre #' . $i);
+            $genre->setGenre('Genre #'.$i);
             $this->genreService->save($genre);
         }
 
@@ -106,8 +100,6 @@ class GenreServiceTest extends KernelTestCase
 
     /**
      * Test canBeDeleted returns true when genre has no tasks.
-     *
-     * @return void
      */
     public function testCanBeDeletedTrue(): void
     {
@@ -130,8 +122,6 @@ class GenreServiceTest extends KernelTestCase
 
     /**
      * Test canBeDeleted returns false when genre has tasks.
-     *
-     * @return void
      */
     public function testCanBeDeletedFalse(): void
     {

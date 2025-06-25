@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Tag controller.
  */
@@ -43,7 +44,7 @@ class TagController extends AbstractController
      * @return Response HTTP response
      */
     #[Route(name: 'tag_index', methods: 'GET')]
-    #[isGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_ADMIN')]
     public function index(Request $request): Response
     {
         $pagination = $this->tagService->getPaginatedList(

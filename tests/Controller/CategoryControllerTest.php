@@ -27,22 +27,16 @@ class CategoryControllerTest extends WebTestCase
 
     /**
      * User repository.
-     *
-     * @var UserRepository
      */
     private UserRepository $userRepository;
 
     /**
      * Category repository.
-     *
-     * @var CategoryRepository
      */
     private CategoryRepository $categoryRepository;
 
     /**
      * Translator interface.
-     *
-     * @var TranslatorInterface
      */
     private TranslatorInterface $translator;
 
@@ -120,7 +114,7 @@ class CategoryControllerTest extends WebTestCase
     public function testShowCategoryPage(): void
     {
         $category = $this->getFirstCategory();
-        $crawler = $this->client->request('GET', '/category/' . $category->getId());
+        $crawler = $this->client->request('GET', '/category/'.$category->getId());
         $this->assertResponseIsSuccessful();
 
         $this->assertStringContainsString(
@@ -135,7 +129,7 @@ class CategoryControllerTest extends WebTestCase
     public function testEditCategoryPageLoads(): void
     {
         $category = $this->getFirstCategory();
-        $this->client->request('GET', '/category/' . $category->getId() . '/edit');
+        $this->client->request('GET', '/category/'.$category->getId().'/edit');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('form');
     }
@@ -147,15 +141,13 @@ class CategoryControllerTest extends WebTestCase
     {
         $category = $this->getFirstCategory();
 
-        $this->client->request('GET', '/category/' . $category->getId() . '/delete');
+        $this->client->request('GET', '/category/'.$category->getId().'/delete');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('form');
     }
 
     /**
      * Pomocnicza metoda do pobrania pierwszej kategorii lub jej utworzenia.
-     *
-     * @return Category
      */
     private function getFirstCategory(): Category
     {

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * RegistrationControllerTest.
+ *
+ * Functional tests for RegistrationController.
+ */
+
 namespace App\Tests\Controller;
 
 use App\Controller\RegistrationController;
@@ -21,8 +27,6 @@ class RegistrationControllerTest extends TestCase
 {
     /**
      * Testuje proces rejestracji użytkownika przy poprawnie wypełnionym formularzu.
-     *
-     * @return void
      */
     public function testRegisterWithValidForm(): void
     {
@@ -33,7 +37,7 @@ class RegistrationControllerTest extends TestCase
                     'first' => 'password123',
                     'second' => 'password123',
                 ],
-            ]
+            ],
         ], [], [], [], ['REQUEST_METHOD' => 'POST']);
 
         $userServiceMock = $this->createMock(UserServiceInterface::class);
@@ -78,8 +82,6 @@ class RegistrationControllerTest extends TestCase
 
     /**
      * Testuje proces rejestracji przy niepoprawnie wypełnionym formularzu.
-     *
-     * @return void
      */
     public function testRegisterWithInvalidForm(): void
     {

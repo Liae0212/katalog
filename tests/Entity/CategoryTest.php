@@ -1,10 +1,15 @@
 <?php
 
+/**
+ * CategoryTest.
+ *
+ * Unit test for the Category class.
+ */
+
 namespace App\Tests\Entity;
 
 use App\Entity\Category;
 use App\Entity\Task;
-use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,15 +20,13 @@ class CategoryTest extends TestCase
     /**
      * Testuje gettery i settery dla pól:
      * createdAt, updatedAt, title, slug.
-     *
-     * @return void
      */
     public function testGettersAndSetters(): void
     {
         $category = new Category();
 
-        $createdAt = new DateTimeImmutable('2024-01-01 12:00:00');
-        $updatedAt = new DateTimeImmutable('2024-01-02 12:00:00');
+        $createdAt = new \DateTimeImmutable('2024-01-01 12:00:00');
+        $updatedAt = new \DateTimeImmutable('2024-01-02 12:00:00');
         $title = 'My Category';
         $slug = 'my-category';
 
@@ -40,8 +43,6 @@ class CategoryTest extends TestCase
 
     /**
      * Testuje, że kolekcja zadań (tasks) jest pusta na początku.
-     *
-     * @return void
      */
     public function testTasksCollectionInitiallyEmpty(): void
     {
@@ -54,8 +55,6 @@ class CategoryTest extends TestCase
     /**
      * Testuje dodanie i usunięcie zadania (Task)
      * oraz poprawność relacji dwukierunkowej.
-     *
-     * @return void
      */
     public function testAddAndRemoveTask(): void
     {

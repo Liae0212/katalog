@@ -32,6 +32,7 @@ class TaskController extends AbstractController
     public $guestUserService;
     public $taskRepository;
     public $tokenStorage;
+
     /**
      * Constructor.
      *
@@ -42,6 +43,7 @@ class TaskController extends AbstractController
     public function __construct(private readonly TaskServiceInterface $taskService, private readonly TranslatorInterface $translator, private readonly CommentService $commentService)
     {
     }
+
     /**
      * Index action.
      *
@@ -65,6 +67,7 @@ class TaskController extends AbstractController
             'pagination' => $pagination,
         ]);
     }
+
     /**
      * Show action.
      *
@@ -79,6 +82,7 @@ class TaskController extends AbstractController
             'task' => $task,
         ]);
     }
+
     /**
      * Edit action.
      *
@@ -119,6 +123,7 @@ class TaskController extends AbstractController
             ]
         );
     }
+
     /**
      * Create action.
      *
@@ -163,6 +168,7 @@ class TaskController extends AbstractController
             ['form' => $form->createView()]
         );
     }
+
     /**
      * Delete action.
      *
@@ -202,6 +208,7 @@ class TaskController extends AbstractController
             ]
         );
     }
+
     /**
      * View action.
      *
@@ -239,6 +246,7 @@ class TaskController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
     /**
      * Get filters from request.
      *

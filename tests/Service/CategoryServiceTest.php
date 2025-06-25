@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Category service tests.
  */
@@ -23,15 +24,11 @@ class CategoryServiceTest extends KernelTestCase
 {
     /**
      * Category repository.
-     *
-     * @var EntityManagerInterface|null
      */
     private ?EntityManagerInterface $entityManager;
 
     /**
      * Category service.
-     *
-     * @var CategoryServiceInterface|null
      */
     private ?CategoryServiceInterface $categoryService;
 

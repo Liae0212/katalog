@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * SecurityControllerTest.
+ *
+ * Functional tests for SecurityController.
+ */
+
 namespace App\Tests\Controller;
 
 use App\Entity\User;
@@ -20,8 +26,6 @@ class SecurityControllerTest extends WebTestCase
 
     /**
      * Ustawia środowisko testowe i tworzy testowego użytkownika.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -40,8 +44,6 @@ class SecurityControllerTest extends WebTestCase
 
     /**
      * Sprawdza, czy strona logowania jest dostępna.
-     *
-     * @return void
      */
     public function testLoginPageIsAccessible(): void
     {
@@ -52,8 +54,6 @@ class SecurityControllerTest extends WebTestCase
 
     /**
      * Sprawdza, czy strona logowania jest dostępna również dla zalogowanego użytkownika.
-     *
-     * @return void
      */
     public function testLoginPageAccessibleWhenLoggedIn(): void
     {
@@ -68,8 +68,6 @@ class SecurityControllerTest extends WebTestCase
 
     /**
      * Sprawdza, czy logowanie kończy się niepowodzeniem przy błędnych danych.
-     *
-     * @return void
      */
     public function testLoginFailsWithInvalidCredentials(): void
     {
@@ -77,7 +75,7 @@ class SecurityControllerTest extends WebTestCase
         $submitLabel = $this->translator->trans('sign.in');
         $this->client->submitForm($submitLabel, [
             'email' => 'testuser@example.com',
-            'password' => 'wrongpassword'
+            'password' => 'wrongpassword',
         ]);
 
         $this->assertResponseRedirects('/login');
@@ -88,8 +86,6 @@ class SecurityControllerTest extends WebTestCase
 
     /**
      * Sprawdza, czy logowanie przebiega pomyślnie przy poprawnych danych.
-     *
-     * @return void
      */
     public function testLoginSucceedsWithValidCredentials(): void
     {
@@ -97,7 +93,7 @@ class SecurityControllerTest extends WebTestCase
         $submitLabel = $this->translator->trans('sign.in');
         $this->client->submitForm($submitLabel, [
             'email' => 'testuser@example.com',
-            'password' => 'testpassword'
+            'password' => 'testpassword',
         ]);
 
         $this->assertResponseRedirects();
@@ -105,8 +101,6 @@ class SecurityControllerTest extends WebTestCase
 
     /**
      * Sprawdza, czy wylogowanie przekierowuje na stronę logowania.
-     *
-     * @return void
      */
     public function testLogout(): void
     {
@@ -121,8 +115,6 @@ class SecurityControllerTest extends WebTestCase
 
     /**
      * Testuje prywatną metodę getLoginUrl() z klasy LoginFormAuthenticator.
-     *
-     * @return void
      */
     public function testGetLoginUrl(): void
     {
@@ -139,8 +131,6 @@ class SecurityControllerTest extends WebTestCase
 
     /**
      * Sprawdza, czy metoda logout() rzuca LogicException zgodnie z oczekiwaniem.
-     *
-     * @return void
      */
     public function testLogoutThrowsLogicException(): void
     {
@@ -153,8 +143,6 @@ class SecurityControllerTest extends WebTestCase
 
     /**
      * Sprawdza, czy wylogowanie przekierowuje poprawnie do strony logowania.
-     *
-     * @return void
      */
     public function testLogoutRedirectsToLoginPage(): void
     {

@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * TagsDataTransformerTest.
+ *
+ * Unit test for the TagsDataTransformer class.
+ */
+
 namespace App\Tests\Form\DataTransformer;
 
 use App\Entity\Tag;
@@ -13,9 +20,6 @@ use PHPUnit\Framework\TestCase;
  */
 class TagsDataTransformerTest extends TestCase
 {
-    /**
-     * @var TagsDataTransformer
-     */
     private TagsDataTransformer $transformer;
 
     /**
@@ -25,8 +29,6 @@ class TagsDataTransformerTest extends TestCase
 
     /**
      * Inicjalizacja testu.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -36,8 +38,6 @@ class TagsDataTransformerTest extends TestCase
 
     /**
      * Testuje, że transformacja pustej kolekcji zwraca pusty string.
-     *
-     * @return void
      */
     public function testTransformReturnsEmptyStringForEmptyCollection(): void
     {
@@ -50,8 +50,6 @@ class TagsDataTransformerTest extends TestCase
 
     /**
      * Testuje, że transformacja kolekcji tagów zwraca ciąg tytułów rozdzielonych przecinkiem.
-     *
-     * @return void
      */
     public function testTransformReturnsCommaSeparatedTagTitles(): void
     {
@@ -69,8 +67,6 @@ class TagsDataTransformerTest extends TestCase
 
     /**
      * Testuje, że reverseTransform odnajduje istniejące tagi i tworzy nowe.
-     *
-     * @return void
      */
     public function testReverseTransformFindsExistingTags(): void
     {
@@ -85,7 +81,7 @@ class TagsDataTransformerTest extends TestCase
         $this->tagService->expects($this->once())
             ->method('save')
             ->with($this->callback(function (Tag $tag) {
-                return $tag->getTitle() === ' symfony';
+                return ' symfony' === $tag->getTitle();
             }));
 
         $result = $this->transformer->reverseTransform('php, symfony');
@@ -97,8 +93,6 @@ class TagsDataTransformerTest extends TestCase
 
     /**
      * Testuje, że reverseTransform ignoruje puste tagi i nie wywołuje serwisu.
-     *
-     * @return void
      */
     public function testReverseTransformIgnoresEmptyTags(): void
     {

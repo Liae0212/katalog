@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * GuestUserRepositoryTest.
+ *
+ * Unit tests for the GuestUserRepository form.
+ */
+
 namespace App\Tests\Repository;
 
 use App\Entity\GuestUser;
@@ -11,15 +17,10 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
  */
 class GuestUserRepositoryTest extends KernelTestCase
 {
-    /**
-     * @var GuestUserRepository|null
-     */
     private ?GuestUserRepository $repository;
 
     /**
      * Set up the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -34,8 +35,6 @@ class GuestUserRepositoryTest extends KernelTestCase
 
     /**
      * Test saving a guest user.
-     *
-     * @return void
      */
     public function testSaveGuestUser(): void
     {
@@ -53,8 +52,6 @@ class GuestUserRepositoryTest extends KernelTestCase
 
     /**
      * Test finding a guest user by email.
-     *
-     * @return void
      */
     public function testFindByEmail(): void
     {

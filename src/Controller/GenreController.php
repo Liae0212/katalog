@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Genre controller.
  */
@@ -31,6 +32,7 @@ class GenreController extends AbstractController
     public function __construct(private readonly GenreServiceInterface $genreService, private readonly TranslatorInterface $translator)
     {
     }
+
     /**
      * Index action.
      *
@@ -47,6 +49,7 @@ class GenreController extends AbstractController
 
         return $this->render('genre/index.html.twig', ['pagination' => $pagination]);
     }
+
     /**
      * Show action.
      *
@@ -64,6 +67,7 @@ class GenreController extends AbstractController
     {
         return $this->render('genre/show.html.twig', ['genre' => $genre]);
     }
+
     /**
      * Create action.
      *
@@ -99,6 +103,7 @@ class GenreController extends AbstractController
             ['form' => $form->createView()]
         );
     }
+
     /**
      * Delete action.
      *
@@ -149,6 +154,7 @@ class GenreController extends AbstractController
             ]
         );
     }
+
     /**
      * Edit action.
      *

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * TagControllerTest.
+ *
+ * Functional tests for TagController.
+ */
+
 namespace App\Tests\Controller;
 
 use App\Entity\Tag;
@@ -27,8 +33,6 @@ class TagControllerTest extends WebTestCase
 
     /**
      * Ustawia środowisko testowe, w tym klienta, menedżera encji oraz testowego użytkownika z rolą admina.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -54,8 +58,6 @@ class TagControllerTest extends WebTestCase
 
     /**
      * Testuje wyświetlenie strony index z listą tagów.
-     *
-     * @return void
      */
     public function testIndex(): void
     {
@@ -66,8 +68,6 @@ class TagControllerTest extends WebTestCase
 
     /**
      * Testuje tworzenie nowego tagu.
-     *
-     * @return void
      */
     public function testCreateTag(): void
     {
@@ -88,8 +88,6 @@ class TagControllerTest extends WebTestCase
 
     /**
      * Testuje wyświetlanie pojedynczego tagu.
-     *
-     * @return void
      */
     public function testShowTag(): void
     {
@@ -98,15 +96,13 @@ class TagControllerTest extends WebTestCase
         $this->entityManager->persist($tag);
         $this->entityManager->flush();
 
-        $this->client->request('GET', '/tag/' . $tag->getId());
+        $this->client->request('GET', '/tag/'.$tag->getId());
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Tag');
     }
 
     /**
      * Testuje proces edycji tagu.
-     *
-     * @return void
      */
     public function testEditTag(): void
     {
@@ -115,7 +111,7 @@ class TagControllerTest extends WebTestCase
         $this->entityManager->persist($tag);
         $this->entityManager->flush();
 
-        $crawler = $this->client->request('GET', '/tag/' . $tag->getId() . '/edit');
+        $crawler = $this->client->request('GET', '/tag/'.$tag->getId().'/edit');
         $this->assertResponseIsSuccessful();
 
         $form = $crawler->filter('form')->form([
@@ -133,8 +129,6 @@ class TagControllerTest extends WebTestCase
 
     /**
      * Testuje usuwanie tagu.
-     *
-     * @return void
      */
     public function testDeleteTag(): void
     {
@@ -144,7 +138,7 @@ class TagControllerTest extends WebTestCase
         $this->entityManager->persist($tag);
         $this->entityManager->flush();
 
-        $crawler = $this->client->request('GET', '/tag/' . $tag->getId() . '/delete');
+        $crawler = $this->client->request('GET', '/tag/'.$tag->getId().'/delete');
         $this->assertResponseIsSuccessful();
 
         $form = $crawler->selectButton('Usuń')->form();

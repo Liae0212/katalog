@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Artist service tests.
  */
@@ -17,20 +18,14 @@ use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
- * Class ArtistServiceTest
+ * Class ArtistServiceTest.
  *
  * Testy integracyjne serwisu ArtistService.
  */
 class ArtistServiceTest extends KernelTestCase
 {
-    /**
-     * @var EntityManagerInterface|null
-     */
     private ?EntityManagerInterface $entityManager;
 
-    /**
-     * @var ArtistServiceInterface|null
-     */
     private ?ArtistServiceInterface $artistService;
 
     /**
@@ -104,9 +99,9 @@ class ArtistServiceTest extends KernelTestCase
         $page = 1;
         $countToCreate = 5;
 
-        for ($i = 0; $i < $countToCreate; $i++) {
+        for ($i = 0; $i < $countToCreate; ++$i) {
             $artist = new Artist();
-            $artist->setName('Artist #' . $i);
+            $artist->setName('Artist #'.$i);
             $this->artistService->save($artist);
         }
 

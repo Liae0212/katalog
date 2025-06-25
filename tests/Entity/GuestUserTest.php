@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * GuestUserTest.
+ *
+ * Unit test for the GuestUser class.
+ */
+
 namespace App\Tests\Entity;
 
 use App\Entity\GuestUser;
@@ -12,8 +18,6 @@ class GuestUserTest extends TestCase
 {
     /**
      * Testuje, że początkowo id jest null.
-     *
-     * @return void
      */
     public function testGetIdInitiallyNull(): void
     {
@@ -23,8 +27,6 @@ class GuestUserTest extends TestCase
 
     /**
      * Testuje getter i setter dla pola email.
-     *
-     * @return void
      */
     public function testGetSetEmail(): void
     {
@@ -36,8 +38,6 @@ class GuestUserTest extends TestCase
 
     /**
      * Testuje ustawienie nieprawidłowego formatu emaila.
-     *
-     * @return void
      */
     public function testEmailFormat(): void
     {

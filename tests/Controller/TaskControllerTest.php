@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * TaskControllerTest.
+ *
+ * Functional tests for TaskController.
+ */
+
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -27,43 +33,7 @@ class TaskControllerTest extends WebTestCase
     private $entityManager;
 
     /**
-     * Konfiguracja środowiska testowego – tworzenie klienta i menedżera encji.
-     *
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        $this->client = static::createClient();
-        $this->entityManager = $this->client->getContainer()->get('doctrine')->getManager();
-    }
-
-    /**
-     * Loguje użytkownika z uprawnieniami administratora.
-     *
-     * @return void
-     */
-    private function logIn(): void
-    {
-        $user = $this->entityManager
-            ->getRepository(User::class)
-            ->findOneBy(['email' => 'admin@example.com']);
-
-        if (!$user) {
-            $user = new User();
-            $user->setEmail('admin@example.com');
-            $user->setPassword(password_hash('test', PASSWORD_BCRYPT));
-            $user->setRoles(['ROLE_ADMIN']);
-            $this->entityManager->persist($user);
-            $this->entityManager->flush();
-        }
-
-        $this->client->loginUser($user);
-    }
-
-    /**
      * Testuje poprawne przesłanie formularza tworzenia zadania.
-     *
-     * @return void
      */
     public function testCreateTaskSubmit(): void
     {
@@ -88,8 +58,6 @@ class TaskControllerTest extends WebTestCase
 
     /**
      * Testuje poprawne wyświetlenie strony zadania.
-     *
-     * @return void
      */
     public function testShowTaskPage(): void
     {
@@ -106,7 +74,7 @@ class TaskControllerTest extends WebTestCase
         $this->entityManager->persist($task);
         $this->entityManager->flush();
 
-        $crawler = $this->client->request('GET', '/task/' . $task->getId());
+        $crawler = $this->client->request('GET', '/task/'.$task->getId());
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1, h2, p', 'Piosenka');
@@ -114,8 +82,6 @@ class TaskControllerTest extends WebTestCase
 
     /**
      * Testuje ładowanie strony edycji zadania.
-     *
-     * @return void
      */
     public function testEditTaskPageLoads(): void
     {
@@ -132,14 +98,12 @@ class TaskControllerTest extends WebTestCase
         $this->entityManager->persist($task);
         $this->entityManager->flush();
 
-        $this->client->request('GET', '/task/' . $task->getId() . '/edit');
+        $this->client->request('GET', '/task/'.$task->getId().'/edit');
         $this->assertResponseIsSuccessful();
     }
 
     /**
      * Testuje usunięcie zadania.
-     *
-     * @return void
      */
     public function testDeleteTask(): void
     {
@@ -156,11 +120,41 @@ class TaskControllerTest extends WebTestCase
         $this->entityManager->persist($task);
         $this->entityManager->flush();
 
-        $crawler = $this->client->request('GET', '/task/' . $task->getId() . '/delete');
+        $crawler = $this->client->request('GET', '/task/'.$task->getId().'/delete');
 
         $form = $crawler->selectButton('Usuń')->form();
         $this->client->submit($form);
 
         $this->assertResponseRedirects('/task');
+    }
+
+    /**
+     * Konfiguracja środowiska testowego – tworzenie klienta i menedżera encji.
+     */
+    protected function setUp(): void
+    {
+        $this->client = static::createClient();
+        $this->entityManager = $this->client->getContainer()->get('doctrine')->getManager();
+    }
+
+    /**
+     * Loguje użytkownika z uprawnieniami administratora.
+     */
+    private function logIn(): void
+    {
+        $user = $this->entityManager
+            ->getRepository(User::class)
+            ->findOneBy(['email' => 'admin@example.com']);
+
+        if (!$user) {
+            $user = new User();
+            $user->setEmail('admin@example.com');
+            $user->setPassword(password_hash('test', PASSWORD_BCRYPT));
+            $user->setRoles(['ROLE_ADMIN']);
+            $this->entityManager->persist($user);
+            $this->entityManager->flush();
+        }
+
+        $this->client->loginUser($user);
     }
 }

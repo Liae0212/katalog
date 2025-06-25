@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * CategoryFixturesTest.
+ *
+ * Unit test for the CategoryFixtures class.
+ */
+
 namespace App\Tests\DataFixtures;
 
 use App\DataFixtures\CategoryFixtures;
@@ -17,8 +23,6 @@ class CategoryFixturesTest extends TestCase
     /**
      * Testuje, czy metoda loadData tworzy dokładnie 20 obiektów Category,
      * które są poprawnie zapisywane i mają unikalne tytuły.
-     *
-     * @return void
      */
     public function testLoadDataCreates20Categories(): void
     {
@@ -54,7 +58,7 @@ class CategoryFixturesTest extends TestCase
         $this->assertCount(20, $persistedEntities);
         $this->assertContainsOnlyInstancesOf(Category::class, $persistedEntities);
 
-        $titles = array_map(fn($category) => $category->getTitle(), $persistedEntities);
+        $titles = array_map(fn ($category) => $category->getTitle(), $persistedEntities);
         $this->assertCount(20, array_unique($titles));
     }
 }

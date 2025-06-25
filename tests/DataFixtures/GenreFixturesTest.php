@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * GenreFixturesTest.
+ *
+ * Unit test for the GenreFixtures class.
+ */
+
 namespace App\Tests\DataFixtures;
 
 use App\DataFixtures\GenreFixtures;
@@ -17,8 +23,6 @@ class GenreFixturesTest extends TestCase
     /**
      * Testuje, czy metoda loadData tworzy 30 obiektów Genre,
      * które są poprawnie zapisywane z wymaganymi właściwościami.
-     *
-     * @return void
      */
     public function testLoadDataCreates30Genres(): void
     {

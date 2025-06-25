@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * CommentFixturesTest.
+ *
+ * Unit test for the CommentFixtures class.
+ */
+
 namespace App\Tests\DataFixtures;
 
 use App\DataFixtures\CommentFixtures;
@@ -19,8 +25,6 @@ class CommentFixturesTest extends TestCase
     /**
      * Testuje, czy metoda loadData tworzy dokładnie 20 obiektów Comment,
      * które są poprawnie zapisywane i mają wymagane właściwości.
-     *
-     * @return void
      */
     public function testLoadDataCreates20Comments(): void
     {
@@ -90,8 +94,6 @@ class CommentFixturesTest extends TestCase
 
     /**
      * Testuje metodę getDependencies, czy zwraca poprawne zależności.
-     *
-     * @return void
      */
     public function testGetDependencies(): void
     {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Task type.
  */
@@ -55,7 +56,7 @@ class TaskType extends AbstractType
             EntityType::class,
             [
                 'class' => Category::class,
-                'choice_label' => fn($category): string => $category->getTitle(),
+                'choice_label' => fn ($category): string => $category->getTitle(),
                 'label' => 'Category',
                 'placeholder' => 'label.none',
                 'required' => true,

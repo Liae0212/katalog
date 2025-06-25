@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * UserControllerTest.
+ *
+ * Functional tests for UserController.
+ */
+
 namespace App\Tests\Controller;
 
 use App\Entity\User;
@@ -21,15 +27,11 @@ class UserControllerTest extends WebTestCase
 
     /**
      * Repozytorium użytkowników.
-     *
-     * @var UserRepository
      */
     private UserRepository $userRepository;
 
     /**
      * Tłumacz komunikatów (translator).
-     *
-     * @var TranslatorInterface
      */
     private TranslatorInterface $translator;
 
@@ -37,8 +39,6 @@ class UserControllerTest extends WebTestCase
      * Inicjalizacja środowiska testowego.
      * Tworzy klienta, pobiera repozytorium użytkowników i translator,
      * tworzy użytkownika admina (jeśli nie istnieje) i loguje go.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -66,8 +66,6 @@ class UserControllerTest extends WebTestCase
     /**
      * Testuje czy strona listy użytkowników ładuje się poprawnie
      * i czy wyświetla paginację, jeśli jest dostępna.
-     *
-     * @return void
      */
     public function testIndexPageLoads(): void
     {
@@ -83,13 +81,11 @@ class UserControllerTest extends WebTestCase
 
     /**
      * Testuje poprawne wyświetlenie strony pojedynczego użytkownika.
-     *
-     * @return void
      */
     public function testShowUserPage(): void
     {
         $user = $this->getFirstUser();
-        $crawler = $this->client->request('GET', '/user/' . $user->getId());
+        $crawler = $this->client->request('GET', '/user/'.$user->getId());
         $this->assertResponseIsSuccessful();
 
         $this->assertSelectorTextContains('body', $user->getEmail());
@@ -97,13 +93,11 @@ class UserControllerTest extends WebTestCase
 
     /**
      * Testuje ładowanie strony zmiany hasła użytkownika oraz poprawne przesłanie formularza.
-     *
-     * @return void
      */
     public function testEditUserPasswordPageLoadsAndSubmit(): void
     {
         $user = $this->getFirstUser();
-        $crawler = $this->client->request('GET', '/user/' . $user->getId() . '/edit/password');
+        $crawler = $this->client->request('GET', '/user/'.$user->getId().'/edit/password');
         $this->assertResponseIsSuccessful();
 
         $form = $crawler->selectButton($this->translator->trans('edit.edit'))->form();
@@ -122,13 +116,11 @@ class UserControllerTest extends WebTestCase
 
     /**
      * Testuje ładowanie strony zmiany emaila użytkownika oraz poprawne przesłanie formularza.
-     *
-     * @return void
      */
     public function testEditUserEmailPageLoadsAndSubmit(): void
     {
         $user = $this->getFirstUser();
-        $crawler = $this->client->request('GET', '/user/' . $user->getId() . '/edit/email');
+        $crawler = $this->client->request('GET', '/user/'.$user->getId().'/edit/email');
         $this->assertResponseIsSuccessful();
 
         $form = $crawler->selectButton($this->translator->trans('edit.edit'))->form();
@@ -147,8 +139,6 @@ class UserControllerTest extends WebTestCase
     /**
      * Pobiera pierwszego użytkownika z bazy, jeśli nie istnieje,
      * tworzy nowego użytkownika testowego i zwraca go.
-     *
-     * @return User
      */
     private function getFirstUser(): User
     {

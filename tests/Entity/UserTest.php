@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * UserTest.
+ *
+ * Unit test for the User class.
+ */
+
 namespace App\Tests\Entity;
 
 use App\Entity\Comment;
@@ -14,8 +20,6 @@ class UserTest extends TestCase
 {
     /**
      * Testuje, że początkowo id jest null.
-     *
-     * @return void
      */
     public function testGetIdInitiallyNull(): void
     {
@@ -25,8 +29,6 @@ class UserTest extends TestCase
 
     /**
      * Testuje setter i getter dla adresu e-mail oraz powiązane metody identyfikatora użytkownika.
-     *
-     * @return void
      */
     public function testSetAndGetEmail(): void
     {
@@ -41,8 +43,6 @@ class UserTest extends TestCase
 
     /**
      * Testuje setter i getter dla hasła.
-     *
-     * @return void
      */
     public function testSetAndGetPassword(): void
     {
@@ -55,8 +55,6 @@ class UserTest extends TestCase
 
     /**
      * Testuje, że w rolach użytkownika zawsze znajduje się rola USER.
-     *
-     * @return void
      */
     public function testRolesAlwaysIncludeRoleUser(): void
     {
@@ -71,8 +69,6 @@ class UserTest extends TestCase
 
     /**
      * Testuje, że metoda getSalt zwraca null.
-     *
-     * @return void
      */
     public function testGetSaltReturnsNull(): void
     {
@@ -82,8 +78,6 @@ class UserTest extends TestCase
 
     /**
      * Testuje, że metoda eraseCredentials nie rzuca wyjątków.
-     *
-     * @return void
      */
     public function testEraseCredentialsDoesNotThrow(): void
     {
@@ -94,8 +88,6 @@ class UserTest extends TestCase
 
     /**
      * Testuje dodawanie i usuwanie komentarzy powiązanych z użytkownikiem.
-     *
-     * @return void
      */
     public function testAddAndRemoveComment(): void
     {

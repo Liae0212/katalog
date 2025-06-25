@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * CategoryRepositoryTest.
+ *
+ * Unit tests for the CategoryRepository form.
+ */
+
 namespace App\Tests\Repository;
 
 use App\Entity\Category;
@@ -15,29 +21,27 @@ use PHPUnit\Framework\TestCase;
 class CategoryRepositoryTest extends TestCase
 {
     /**
-     * @var ManagerRegistry Mock ManagerRegistry.
+     * @var ManagerRegistry mock ManagerRegistry
      */
     private ManagerRegistry $registryMock;
 
     /**
-     * @var EntityManagerInterface Mock EntityManager.
+     * @var EntityManagerInterface mock EntityManager
      */
     private EntityManagerInterface $entityManagerMock;
 
     /**
-     * @var QueryBuilder Mock QueryBuilder.
+     * @var QueryBuilder mock QueryBuilder
      */
     private QueryBuilder $queryBuilderMock;
 
     /**
-     * @var CategoryRepository Testowany repository.
+     * @var CategoryRepository testowany repository
      */
     private CategoryRepository $repository;
 
     /**
      * Przygotowuje środowisko testowe, tworzy mocki i instancję repository.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -62,8 +66,6 @@ class CategoryRepositoryTest extends TestCase
 
     /**
      * Testuje metodę save - czy wywołuje persist i flush na EntityManager.
-     *
-     * @return void
      */
     public function testSave(): void
     {
@@ -81,8 +83,6 @@ class CategoryRepositoryTest extends TestCase
 
     /**
      * Testuje metodę delete - czy wywołuje remove i flush na EntityManager.
-     *
-     * @return void
      */
     public function testDelete(): void
     {

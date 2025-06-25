@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * ArtistRepositoryTest.
+ *
+ * Unit tests for the ArtistRepository form.
+ */
+
 namespace App\Tests\Repository;
 
 use App\Entity\Artist;
@@ -17,29 +23,27 @@ use PHPUnit\Framework\TestCase;
 class ArtistRepositoryTest extends TestCase
 {
     /**
-     * @var ManagerRegistry&MockObject Mock ManagerRegistry.
+     * @var ManagerRegistry&MockObject Mock ManagerRegistry
      */
     private ManagerRegistry&MockObject $registryMock;
 
     /**
-     * @var EntityManagerInterface&MockObject Mock EntityManager.
+     * @var EntityManagerInterface&MockObject Mock EntityManager
      */
     private EntityManagerInterface&MockObject $entityManagerMock;
 
     /**
-     * @var ArtistRepository Testowany repository.
+     * @var ArtistRepository testowany repository
      */
     private ArtistRepository $repository;
 
     /**
-     * @var QueryBuilder&MockObject Mock QueryBuilder.
+     * @var QueryBuilder&MockObject Mock QueryBuilder
      */
     private QueryBuilder&MockObject $queryBuilderMock;
 
     /**
      * Przygotowuje środowisko testowe, tworzy mocki i instancję repository.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -73,8 +77,6 @@ class ArtistRepositoryTest extends TestCase
 
     /**
      * Testuje metodę queryAll - czy buduje zapytanie z odpowiednim select i orderBy.
-     *
-     * @return void
      */
     public function testQueryAll(): void
     {
@@ -95,8 +97,6 @@ class ArtistRepositoryTest extends TestCase
 
     /**
      * Testuje metodę save - czy wywołuje persist i flush na EntityManager.
-     *
-     * @return void
      */
     public function testSave(): void
     {
@@ -110,8 +110,6 @@ class ArtistRepositoryTest extends TestCase
 
     /**
      * Testuje metodę delete - czy wywołuje remove i flush na EntityManager.
-     *
-     * @return void
      */
     public function testDelete(): void
     {

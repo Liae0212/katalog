@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * RegistrationTypeTest.
+ *
+ * Unit tests for the RegistrationType form.
+ */
+
 namespace App\Tests\Form\Type;
 
 use App\Form\Type\RegistrationType;
@@ -18,26 +25,7 @@ use Symfony\Component\Validator\Validation;
 class RegistrationTypeTest extends TypeTestCase
 {
     /**
-     * Zwraca rozszerzenia formularza potrzebne do testów.
-     *
-     * @return array<int, \Symfony\Component\Form\FormExtensionInterface>
-     */
-    protected function getExtensions(): array
-    {
-        $validator = Validation::createValidatorBuilder()
-            ->enableAnnotationMapping()
-            ->getValidator();
-
-        return [
-            new PreloadedExtension([new RegistrationType()], []),
-            new ValidatorExtension($validator),
-        ];
-    }
-
-    /**
      * Testuje obecność i konfigurację pól formularza.
-     *
-     * @return void
      */
     public function testFormFieldsAndOptions(): void
     {
@@ -94,12 +82,27 @@ class RegistrationTypeTest extends TypeTestCase
 
     /**
      * Testuje metodę getBlockPrefix.
-     *
-     * @return void
      */
     public function testGetBlockPrefix(): void
     {
         $type = new RegistrationType();
         $this->assertSame('user', $type->getBlockPrefix());
+    }
+
+    /**
+     * Zwraca rozszerzenia formularza potrzebne do testów.
+     *
+     * @return array<int, \Symfony\Component\Form\FormExtensionInterface>
+     */
+    protected function getExtensions(): array
+    {
+        $validator = Validation::createValidatorBuilder()
+            ->enableAnnotationMapping()
+            ->getValidator();
+
+        return [
+            new PreloadedExtension([new RegistrationType()], []),
+            new ValidatorExtension($validator),
+        ];
     }
 }

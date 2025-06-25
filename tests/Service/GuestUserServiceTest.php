@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * GuestUserServiceTest.
+ *
+ * Unit tests for the GuestuserService class.
+ */
+
 namespace App\Tests\Service;
 
 use App\Entity\GuestUser;
@@ -16,22 +22,16 @@ class GuestUserServiceTest extends KernelTestCase
 {
     /**
      * Entity manager.
-     *
-     * @var EntityManagerInterface|null
      */
     private ?EntityManagerInterface $entityManager;
 
     /**
      * Guest user service.
-     *
-     * @var GuestUserServiceInterface|null
      */
     private ?GuestUserServiceInterface $guestUserService;
 
     /**
      * Set up test.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -46,8 +46,6 @@ class GuestUserServiceTest extends KernelTestCase
 
     /**
      * Test saving a new guest user.
-     *
-     * @return void
      */
     public function testSaveNewGuestUser(): void
     {
@@ -67,8 +65,6 @@ class GuestUserServiceTest extends KernelTestCase
 
     /**
      * Test save prevents duplicates.
-     *
-     * @return void
      */
     public function testSaveDuplicateGuestUserIsNotSavedTwice(): void
     {

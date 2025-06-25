@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Genre service interface.
  */

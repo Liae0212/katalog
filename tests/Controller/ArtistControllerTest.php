@@ -27,22 +27,16 @@ class ArtistControllerTest extends WebTestCase
 
     /**
      * User repository.
-     *
-     * @var UserRepository
      */
     private UserRepository $userRepository;
 
     /**
      * Artist repository.
-     *
-     * @var ArtistRepository
      */
     private ArtistRepository $artistRepository;
 
     /**
      * Translator interface.
-     *
-     * @var TranslatorInterface
      */
     private TranslatorInterface $translator;
 
@@ -94,7 +88,7 @@ class ArtistControllerTest extends WebTestCase
     public function testShowArtistPage(): void
     {
         $artist = $this->getFirstArtist();
-        $crawler = $this->client->request('GET', '/artist/' . $artist->getId());
+        $crawler = $this->client->request('GET', '/artist/'.$artist->getId());
         $this->assertResponseIsSuccessful();
 
         $this->assertStringContainsString(
@@ -142,7 +136,7 @@ class ArtistControllerTest extends WebTestCase
     public function testEditArtistPageLoads(): void
     {
         $artist = $this->getFirstArtist();
-        $crawler = $this->client->request('GET', '/artist/' . $artist->getId() . '/edit');
+        $crawler = $this->client->request('GET', '/artist/'.$artist->getId().'/edit');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('form');
     }
@@ -154,7 +148,7 @@ class ArtistControllerTest extends WebTestCase
     {
         $artist = $this->getFirstArtist();
 
-        $this->client->request('GET', '/artist/' . $artist->getId() . '/delete');
+        $this->client->request('GET', '/artist/'.$artist->getId().'/delete');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('form');
     }

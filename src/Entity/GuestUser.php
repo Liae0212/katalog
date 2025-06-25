@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GuestUser entity.
  */

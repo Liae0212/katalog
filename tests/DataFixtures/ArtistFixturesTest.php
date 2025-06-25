@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * DataFixturesTest.
+ *
+ * Unit test for the DataFixtures class.
+ */
+
 namespace App\Tests\DataFixtures;
 
 use App\DataFixtures\ArtistFixtures;
@@ -17,8 +23,6 @@ class ArtistFixturesTest extends TestCase
     /**
      * Testuje, czy metoda loadData tworzy dokładnie 30 obiektów Artist
      * i czy są one poprawnie zapisywane przez ObjectManager.
-     *
-     * @return void
      */
     public function testLoadDataCreates30Artists(): void
     {

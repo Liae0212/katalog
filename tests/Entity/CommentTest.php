@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * CommentTest.
+ *
+ * Unit test for the Comment class.
+ */
+
 namespace App\Tests\Entity;
 
 use App\Entity\Comment;
@@ -15,8 +21,6 @@ class CommentTest extends TestCase
     /**
      * Testuje gettery i settery dla pól:
      * content oraz nick.
-     *
-     * @return void
      */
     public function testGettersAndSetters(): void
     {
@@ -34,8 +38,6 @@ class CommentTest extends TestCase
 
     /**
      * Testuje setter i getter dla pola author (User|null).
-     *
-     * @return void
      */
     public function testAuthorSetterAndGetter(): void
     {
@@ -51,8 +53,6 @@ class CommentTest extends TestCase
 
     /**
      * Testuje setter i getter dla pola task (Task|null).
-     *
-     * @return void
      */
     public function testTaskSetterAndGetter(): void
     {
@@ -68,8 +68,6 @@ class CommentTest extends TestCase
 
     /**
      * Testuje, że początkowo id jest null.
-     *
-     * @return void
      */
     public function testIdInitiallyNull(): void
     {

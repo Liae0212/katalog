@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * GenreControllerTest.
+ *
+ * Functional tests for GenreController.
+ */
+
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -24,6 +30,77 @@ class GenreControllerTest extends WebTestCase
      * @var \Doctrine\ORM\EntityManagerInterface
      */
     private $entityManager;
+
+    /**
+     * Testuje tworzenie nowego gatunku (Genre).
+     */
+    public function testCreateGenre(): void
+    {
+        $this->logIn();
+
+        $crawler = $this->client->request('GET', '/genres/create');
+        $form = $crawler->selectButton('Zapisz')->form();
+
+        $form['genre[genre]'] = 'Nowy Gatunek';
+        $this->client->submit($form);
+
+        $this->assertResponseRedirects('/genres');
+    }
+
+    /**
+     * Testuje wyświetlanie pojedynczego gatunku.
+     */
+    public function testShowGenre(): void
+    {
+        $genre = new Genre();
+        $genre->setGenre('Testowy Gatunek');
+
+        $this->entityManager->persist($genre);
+        $this->entityManager->flush();
+
+        $this->client->request('GET', '/genres/'.$genre->getId());
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('h1, h2, p', 'Gatunek');
+    }
+
+    /**
+     * Testuje edycję istniejącego gatunku.
+     */
+    public function testEditGenre(): void
+    {
+        $this->logIn();
+
+        $genre = new Genre();
+        $genre->setGenre('Do edycji');
+        $this->entityManager->persist($genre);
+        $this->entityManager->flush();
+
+        $crawler = $this->client->request('GET', '/genres/'.$genre->getId().'/edit');
+        $form = $crawler->selectButton('Edytuj')->form();
+        $form['genre[genre]'] = 'Zmieniony Gatunek';
+
+        $this->client->submit($form);
+        $this->assertResponseRedirects('/genres');
+    }
+
+    /**
+     * Testuje usunięcie gatunku.
+     */
+    public function testDeleteGenre(): void
+    {
+        $this->logIn();
+
+        $genre = new Genre();
+        $genre->setGenre('Do usunięcia');
+        $this->entityManager->persist($genre);
+        $this->entityManager->flush();
+
+        $crawler = $this->client->request('GET', '/genres/'.$genre->getId().'/delete');
+        $form = $crawler->selectButton('Usuń')->form();
+        $this->client->submit($form);
+
+        $this->assertResponseRedirects('/genres');
+    }
 
     /**
      * Inicjalizacja klienta i menedżera encji.
@@ -54,76 +131,5 @@ class GenreControllerTest extends WebTestCase
         }
 
         $this->client->loginUser($user);
-    }
-
-    /**
-     * Testuje tworzenie nowego gatunku (Genre).
-     */
-    public function testCreateGenre(): void
-    {
-        $this->logIn();
-
-        $crawler = $this->client->request('GET', '/genres/create');
-        $form = $crawler->selectButton('Zapisz')->form();
-
-        $form['genre[genre]'] = 'Nowy Gatunek';
-        $this->client->submit($form);
-
-        $this->assertResponseRedirects('/genres');
-    }
-
-    /**
-     * Testuje wyświetlanie pojedynczego gatunku.
-     */
-    public function testShowGenre(): void
-    {
-        $genre = new Genre();
-        $genre->setGenre('Testowy Gatunek');
-
-        $this->entityManager->persist($genre);
-        $this->entityManager->flush();
-
-        $this->client->request('GET', '/genres/' . $genre->getId());
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1, h2, p', 'Gatunek');
-    }
-
-    /**
-     * Testuje edycję istniejącego gatunku.
-     */
-    public function testEditGenre(): void
-    {
-        $this->logIn();
-
-        $genre = new Genre();
-        $genre->setGenre('Do edycji');
-        $this->entityManager->persist($genre);
-        $this->entityManager->flush();
-
-        $crawler = $this->client->request('GET', '/genres/' . $genre->getId() . '/edit');
-        $form = $crawler->selectButton('Edytuj')->form();
-        $form['genre[genre]'] = 'Zmieniony Gatunek';
-
-        $this->client->submit($form);
-        $this->assertResponseRedirects('/genres');
-    }
-
-    /**
-     * Testuje usunięcie gatunku.
-     */
-    public function testDeleteGenre(): void
-    {
-        $this->logIn();
-
-        $genre = new Genre();
-        $genre->setGenre('Do usunięcia');
-        $this->entityManager->persist($genre);
-        $this->entityManager->flush();
-
-        $crawler = $this->client->request('GET', '/genres/' . $genre->getId() . '/delete');
-        $form = $crawler->selectButton('Usuń')->form();
-        $this->client->submit($form);
-
-        $this->assertResponseRedirects('/genres');
     }
 }

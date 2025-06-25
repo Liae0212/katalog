@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * UserFixturesTest.
+ *
+ * Unit test for the UserFixtures class.
+ */
+
 namespace App\Tests\DataFixtures;
 
 use App\DataFixtures\UserFixtures;
@@ -20,8 +26,6 @@ class UserFixturesTest extends TestCase
      * Testuje metodę loadData, która powinna utworzyć
      * 10 użytkowników i 3 administratorów z odpowiednimi
      * rolami, emailami oraz zahashowanymi hasłami.
-     *
-     * @return void
      */
     public function testLoadDataCreatesUsersAndAdmins(): void
     {
@@ -64,8 +68,8 @@ class UserFixturesTest extends TestCase
 
         $this->assertCount(13, $persisted);
 
-        $users = array_filter($persisted, fn(User $u) => str_starts_with($u->getEmail(), 'user'));
-        $admins = array_filter($persisted, fn(User $u) => str_starts_with($u->getEmail(), 'admin'));
+        $users = array_filter($persisted, fn (User $u) => str_starts_with($u->getEmail(), 'user'));
+        $admins = array_filter($persisted, fn (User $u) => str_starts_with($u->getEmail(), 'admin'));
 
         $users = array_values($users);
         $admins = array_values($admins);

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * TaskTest.
+ *
+ * Unit test for the Task class.
+ */
+
 namespace App\Tests\Entity;
 
 use App\Entity\Artist;
@@ -17,8 +23,6 @@ class TaskTest extends TestCase
 {
     /**
      * Testuje, że początkowo id jest null.
-     *
-     * @return void
      */
     public function testGetIdInitiallyNull(): void
     {
@@ -28,8 +32,6 @@ class TaskTest extends TestCase
 
     /**
      * Testuje setter i getter dla daty utworzenia.
-     *
-     * @return void
      */
     public function testSetAndGetCreatedAt(): void
     {
@@ -41,8 +43,6 @@ class TaskTest extends TestCase
 
     /**
      * Testuje setter i getter dla daty aktualizacji.
-     *
-     * @return void
      */
     public function testSetAndGetUpdatedAt(): void
     {
@@ -54,8 +54,6 @@ class TaskTest extends TestCase
 
     /**
      * Testuje setter i getter dla tytułu zadania.
-     *
-     * @return void
      */
     public function testSetAndGetTitle(): void
     {
@@ -67,8 +65,6 @@ class TaskTest extends TestCase
 
     /**
      * Testuje setter i getter dla kategorii.
-     *
-     * @return void
      */
     public function testSetAndGetCategory(): void
     {
@@ -80,8 +76,6 @@ class TaskTest extends TestCase
 
     /**
      * Testuje dodawanie i usuwanie tagów.
-     *
-     * @return void
      */
     public function testAddAndRemoveTags(): void
     {
@@ -108,8 +102,6 @@ class TaskTest extends TestCase
 
     /**
      * Testuje setter i getter dla artysty.
-     *
-     * @return void
      */
     public function testSetAndGetArtist(): void
     {
@@ -121,8 +113,6 @@ class TaskTest extends TestCase
 
     /**
      * Testuje setter i getter dla gatunku.
-     *
-     * @return void
      */
     public function testSetAndGetGenre(): void
     {
@@ -134,8 +124,6 @@ class TaskTest extends TestCase
 
     /**
      * Testuje setter i getter dla użytkownika.
-     *
-     * @return void
      */
     public function testSetAndGetUsers(): void
     {
@@ -147,8 +135,6 @@ class TaskTest extends TestCase
 
     /**
      * Testuje, że kolekcja komentarzy jest początkowo pusta.
-     *
-     * @return void
      */
     public function testCommentsCollectionIsInitiallyEmpty(): void
     {

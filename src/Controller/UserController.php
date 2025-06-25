@@ -33,9 +33,10 @@ class UserController extends AbstractController
      *
      * @return void
      */
-    public function __construct(private readonly userServiceInterface $userService, private readonly TranslatorInterface $translator, private readonly UserPasswordHasherInterface $passwordHasher)
+    public function __construct(private readonly UserServiceInterface $userService, private readonly TranslatorInterface $translator, private readonly UserPasswordHasherInterface $passwordHasher)
     {
     }
+
     /**
      * Index action.
      *
@@ -54,6 +55,7 @@ class UserController extends AbstractController
             ['pagination' => $pagination]
         );
     }
+
     /**
      * Show action.
      *
@@ -70,6 +72,7 @@ class UserController extends AbstractController
             ['user' => $user]
         );
     }
+
     /**
      * Edit action.
      *
@@ -101,6 +104,7 @@ class UserController extends AbstractController
             ]
         );
     }
+
     /**
      * Edit email action.
      *

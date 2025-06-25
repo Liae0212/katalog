@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Artist controller.
  */
@@ -31,6 +32,7 @@ class ArtistController extends AbstractController
     public function __construct(private readonly ArtistServiceInterface $artistService, private readonly TranslatorInterface $translator)
     {
     }
+
     /**
      * Index action.
      *
@@ -47,6 +49,7 @@ class ArtistController extends AbstractController
 
         return $this->render('artist/index.html.twig', ['pagination' => $pagination]);
     }
+
     /**
      * Show action.
      *
@@ -64,6 +67,7 @@ class ArtistController extends AbstractController
     {
         return $this->render('artist/show.html.twig', ['artist' => $artist]);
     }
+
     /**
      * Create action.
      *
@@ -99,6 +103,7 @@ class ArtistController extends AbstractController
             ['form' => $form->createView()]
         );
     }
+
     /**
      * Delete action.
      *
@@ -149,6 +154,7 @@ class ArtistController extends AbstractController
             ]
         );
     }
+
     /**
      * Edit action.
      *

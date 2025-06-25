@@ -1,10 +1,15 @@
 <?php
 
+/**
+ * ArtistTest.
+ *
+ * Unit test for the Artist class.
+ */
+
 namespace App\Tests\Entity;
 
 use App\Entity\Artist;
 use App\Entity\Task;
-use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,15 +20,13 @@ class ArtistTest extends TestCase
     /**
      * Testuje gettery i settery dla pól:
      * createdAt, updatedAt, name.
-     *
-     * @return void
      */
     public function testGettersAndSetters(): void
     {
         $artist = new Artist();
 
-        $dateCreated = new DateTimeImmutable('2023-01-01 10:00:00');
-        $dateUpdated = new DateTimeImmutable('2023-01-02 15:00:00');
+        $dateCreated = new \DateTimeImmutable('2023-01-01 10:00:00');
+        $dateUpdated = new \DateTimeImmutable('2023-01-02 15:00:00');
         $name = 'John Doe';
 
         $artist->setCreatedAt($dateCreated);
@@ -38,8 +41,6 @@ class ArtistTest extends TestCase
     /**
      * Testuje dodanie zadania (Task) do artysty (Artist)
      * oraz poprawne przypisanie relacji dwukierunkowej.
-     *
-     * @return void
      */
     public function testAddTask(): void
     {
@@ -55,8 +56,6 @@ class ArtistTest extends TestCase
     /**
      * Testuje, że dodanie tego samego zadania
      * nie powoduje duplikatów w kolekcji.
-     *
-     * @return void
      */
     public function testAddTaskDoesNotAddDuplicate(): void
     {
@@ -73,8 +72,6 @@ class ArtistTest extends TestCase
     /**
      * Testuje usunięcie zadania (Task) z artysty (Artist)
      * oraz poprawne zerowanie relacji dwukierunkowej.
-     *
-     * @return void
      */
     public function testRemoveTask(): void
     {
@@ -92,8 +89,6 @@ class ArtistTest extends TestCase
      * Testuje, że usunięcie zadania,
      * które nie zostało dodane, nie powoduje błędów
      * i nie zmienia stanu obiektu.
-     *
-     * @return void
      */
     public function testRemoveTaskDoesNothingIfNotPresent(): void
     {

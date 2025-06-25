@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * TagServiceTest.
+ *
+ * Unit tests for the TagService class.
+ */
+
 namespace App\Tests\Service;
 
 use App\Entity\Tag;
@@ -17,22 +23,16 @@ class TagServiceTest extends KernelTestCase
 {
     /**
      * Entity manager.
-     *
-     * @var EntityManagerInterface|null
      */
     private ?EntityManagerInterface $entityManager;
 
     /**
      * Tag service.
-     *
-     * @var TagServiceInterface|null
      */
     private ?TagServiceInterface $tagService;
 
     /**
      * Set up the test.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -45,8 +45,6 @@ class TagServiceTest extends KernelTestCase
 
     /**
      * Test save.
-     *
-     * @return void
      */
     public function testSave(): void
     {
@@ -68,8 +66,6 @@ class TagServiceTest extends KernelTestCase
 
     /**
      * Test delete.
-     *
-     * @return void
      */
     public function testDelete(): void
     {
@@ -96,7 +92,6 @@ class TagServiceTest extends KernelTestCase
      * Test findOneById.
      *
      * @throws NonUniqueResultException
-     * @return void
      */
     public function testFindOneById(): void
     {
@@ -112,8 +107,6 @@ class TagServiceTest extends KernelTestCase
 
     /**
      * Test findOneByTitle.
-     *
-     * @return void
      */
     public function testFindOneByTitle(): void
     {
@@ -130,8 +123,6 @@ class TagServiceTest extends KernelTestCase
 
     /**
      * Test getPaginatedList.
-     *
-     * @return void
      */
     public function testGetPaginatedList(): void
     {
@@ -139,7 +130,7 @@ class TagServiceTest extends KernelTestCase
         $count = 3;
         for ($i = 0; $i < $count; ++$i) {
             $tag = new Tag();
-            $tag->setTitle('Tag #' . $i);
+            $tag->setTitle('Tag #'.$i);
             $this->tagService->save($tag);
         }
 

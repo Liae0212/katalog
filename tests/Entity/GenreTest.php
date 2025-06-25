@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * GenreTest.
+ *
+ * Unit test for the Genre class.
+ */
+
 namespace App\Tests\Entity;
 
 use App\Entity\Genre;
@@ -14,8 +20,6 @@ class GenreTest extends TestCase
     /**
      * Testuje gettery i settery dla pól:
      * createdAt, updatedAt oraz genre.
-     *
-     * @return void
      */
     public function testGettersAndSetters(): void
     {
@@ -36,8 +40,6 @@ class GenreTest extends TestCase
 
     /**
      * Testuje, że początkowo id jest null.
-     *
-     * @return void
      */
     public function testIdInitiallyNull(): void
     {
@@ -47,8 +49,6 @@ class GenreTest extends TestCase
 
     /**
      * Testuje, że kolekcja zadań jest początkowo pusta.
-     *
-     * @return void
      */
     public function testTasksCollectionInitiallyEmpty(): void
     {
@@ -59,8 +59,6 @@ class GenreTest extends TestCase
     /**
      * Testuje dodanie zadania do kolekcji i
      * wywołanie metody setGenre na obiekcie Task.
-     *
-     * @return void
      */
     public function testAddTask(): void
     {
@@ -80,8 +78,6 @@ class GenreTest extends TestCase
     /**
      * Testuje, że dodanie tego samego zadania
      * nie powoduje duplikatu i nie wywołuje setGenre ponownie.
-     *
-     * @return void
      */
     public function testAddTaskDoesNotDuplicate(): void
     {

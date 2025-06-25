@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * TaskFixturesTest.
+ *
+ * Unit test for the TaskFixtures class.
+ */
+
 namespace App\Tests\DataFixtures;
 
 use App\DataFixtures\TaskFixtures;
@@ -11,7 +17,6 @@ use App\Entity\User;
 use App\Entity\Tag;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\ReferenceRepository;
-use Faker\Factory;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -22,8 +27,6 @@ class TaskFixturesTest extends TestCase
     /**
      * Testuje metodę load, która powinna wywołać loadData
      * i utworzyć 100 obiektów Task z poprawnie ustawionym tytułem.
-     *
-     * @return void
      */
     public function testLoadCallsLoadData(): void
     {
@@ -72,8 +75,6 @@ class TaskFixturesTest extends TestCase
 
     /**
      * Testuje, czy metoda getDependencies zwraca poprawną listę zależności.
-     *
-     * @return void
      */
     public function testGetDependenciesReturnsCorrectClasses(): void
     {

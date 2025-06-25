@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * CommentControllerTest.
+ *
+ * This file contains functional tests for the CommentController.
+ *
+ * @author
+ * @license
+ */
+
 namespace App\Tests\Controller;
 
 use App\Entity\Comment;
@@ -26,6 +35,100 @@ class CommentControllerTest extends WebTestCase
      * @var \Doctrine\ORM\EntityManagerInterface
      */
     private $entityManager;
+
+    /**
+     * Testuje proces tworzenia komentarza.
+     */
+    public function testCreateComment(): void
+    {
+        $this->logIn();
+        $category = $this->createCategory();
+
+        $task = new Task();
+        $task->setTitle('Zadanie do komentarza');
+        $task->setCategory($category);
+        $this->entityManager->persist($task);
+        $this->entityManager->flush();
+
+        $crawler = $this->client->request('GET', '/comment/create/'.$task->getId());
+        $this->assertResponseIsSuccessful();
+
+        $form = $crawler->selectButton('Zapisz')->form();
+        $form['comment[content]'] = 'To jest testowy komentarz';
+        $form['comment[nick]'] = 'Tester';
+
+        $this->client->submit($form);
+
+        $this->assertResponseRedirects('/task');
+    }
+
+    /**
+     * Testuje proces edycji istniejącego komentarza.
+     */
+    public function testEditComment(): void
+    {
+        $this->logIn();
+        $category = $this->createCategory();
+
+        $task = new Task();
+        $task->setTitle('Zadanie testowe');
+        $task->setCategory($category);
+        $this->entityManager->persist($task);
+
+        $comment = new Comment();
+        $comment->setContent('Stary komentarz');
+        $comment->setNick('Tester');
+        $comment->setTask($task);
+        $comment->setAuthor(
+            $this->entityManager->getRepository(User::class)->findOneBy(['email' => 'admin@example.com'])
+        );
+
+        $this->entityManager->persist($comment);
+        $this->entityManager->flush();
+
+        $crawler = $this->client->request('GET', '/comment/'.$comment->getId().'/edit');
+        $this->assertResponseIsSuccessful();
+
+        $form = $crawler->filter('form')->form([
+            'comment[content]' => 'Zaktualizowany komentarz',
+        ]);
+
+        $this->client->submit($form);
+        $this->assertResponseRedirects('/task');
+    }
+
+    /**
+     * Testuje proces usuwania komentarza.
+     */
+    public function testDeleteComment(): void
+    {
+        $this->logIn();
+        $category = $this->createCategory();
+
+        $task = new Task();
+        $task->setTitle('Zadanie testowe');
+        $task->setCategory($category);
+        $this->entityManager->persist($task);
+
+        $comment = new Comment();
+        $comment->setContent('Komentarz do usunięcia');
+        $comment->setNick('Tester');
+        $comment->setTask($task);
+        $comment->setAuthor(
+            $this->entityManager->getRepository(User::class)->findOneBy(['email' => 'admin@example.com'])
+        );
+
+        $this->entityManager->persist($comment);
+        $this->entityManager->flush();
+
+        $crawler = $this->client->request('GET', '/comment/'.$comment->getId().'/delete');
+        $this->assertResponseIsSuccessful();
+
+        $form = $crawler->selectButton('Usuń')->form();
+        $this->client->submit($form);
+
+        $this->assertResponseRedirects('/task');
+    }
 
     /**
      * Inicjalizacja klienta i menedżera encji.
@@ -60,8 +163,6 @@ class CommentControllerTest extends WebTestCase
 
     /**
      * Tworzy i zwraca kategorię testową.
-     *
-     * @return Category
      */
     private function createCategory(): Category
     {
@@ -71,95 +172,5 @@ class CommentControllerTest extends WebTestCase
         $this->entityManager->flush();
 
         return $category;
-    }
-
-    /**
-     * Testuje proces tworzenia komentarza.
-     */
-    public function testCreateComment(): void
-    {
-        $this->logIn();
-        $category = $this->createCategory();
-
-        $task = new Task();
-        $task->setTitle('Zadanie do komentarza');
-        $task->setCategory($category);
-        $this->entityManager->persist($task);
-        $this->entityManager->flush();
-
-        $crawler = $this->client->request('GET', '/comment/create/' . $task->getId());
-        $this->assertResponseIsSuccessful();
-
-        $form = $crawler->selectButton('Zapisz')->form();
-        $form['comment[content]'] = 'To jest testowy komentarz';
-        $form['comment[nick]'] = 'Tester';
-
-        $this->client->submit($form);
-
-        $this->assertResponseRedirects('/task');
-    }
-
-    /**
-     * Testuje proces edycji istniejącego komentarza.
-     */
-    public function testEditComment(): void
-    {
-        $this->logIn();
-        $category = $this->createCategory();
-
-        $task = new Task();
-        $task->setTitle('Zadanie testowe');
-        $task->setCategory($category);
-        $this->entityManager->persist($task);
-
-        $comment = new Comment();
-        $comment->setContent('Stary komentarz');
-        $comment->setNick('Tester');
-        $comment->setTask($task);
-        $comment->setAuthor($this->entityManager->getRepository(User::class)->findOneBy(['email' => 'admin@example.com']));
-
-        $this->entityManager->persist($comment);
-        $this->entityManager->flush();
-
-        $crawler = $this->client->request('GET', '/comment/' . $comment->getId() . '/edit');
-        $this->assertResponseIsSuccessful();
-
-        $form = $crawler->filter('form')->form([
-            'comment[content]' => 'Zaktualizowany komentarz',
-        ]);
-
-        $this->client->submit($form);
-        $this->assertResponseRedirects('/task');
-    }
-
-    /**
-     * Testuje proces usuwania komentarza.
-     */
-    public function testDeleteComment(): void
-    {
-        $this->logIn();
-        $category = $this->createCategory();
-
-        $task = new Task();
-        $task->setTitle('Zadanie testowe');
-        $task->setCategory($category);
-        $this->entityManager->persist($task);
-
-        $comment = new Comment();
-        $comment->setContent('Komentarz do usunięcia');
-        $comment->setNick('Tester');
-        $comment->setTask($task);
-        $comment->setAuthor($this->entityManager->getRepository(User::class)->findOneBy(['email' => 'admin@example.com']));
-
-        $this->entityManager->persist($comment);
-        $this->entityManager->flush();
-
-        $crawler = $this->client->request('GET', '/comment/' . $comment->getId() . '/delete');
-        $this->assertResponseIsSuccessful();
-
-        $form = $crawler->selectButton('Usuń')->form();
-        $this->client->submit($form);
-
-        $this->assertResponseRedirects('/task');
     }
 }

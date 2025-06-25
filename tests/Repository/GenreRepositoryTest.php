@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * GenreRepositoryTest.
+ *
+ * Unit tests for the GenreRepository form.
+ */
+
 namespace App\Tests\Repository;
 
 use App\Entity\Genre;
@@ -15,29 +21,27 @@ use PHPUnit\Framework\TestCase;
 class GenreRepositoryTest extends TestCase
 {
     /**
-     * @var ManagerRegistry Mock ManagerRegistry.
+     * @var ManagerRegistry mock ManagerRegistry
      */
     private ManagerRegistry $registryMock;
 
     /**
-     * @var EntityManagerInterface Mock EntityManager.
+     * @var EntityManagerInterface mock EntityManager
      */
     private EntityManagerInterface $entityManagerMock;
 
     /**
-     * @var QueryBuilder Mock QueryBuilder.
+     * @var QueryBuilder mock QueryBuilder
      */
     private QueryBuilder $queryBuilderMock;
 
     /**
-     * @var GenreRepository Testowany repository.
+     * @var GenreRepository testowany repository
      */
     private GenreRepository $repository;
 
     /**
      * Przygotowuje środowisko testowe, tworzy mocki i instancję repository.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -65,8 +69,6 @@ class GenreRepositoryTest extends TestCase
 
     /**
      * Testuje metodę queryAll, czy tworzy prawidłowe zapytanie z select i orderBy.
-     *
-     * @return void
      */
     public function testQueryAll(): void
     {
@@ -95,8 +97,6 @@ class GenreRepositoryTest extends TestCase
 
     /**
      * Testuje metodę save, czy wywołuje persist i flush na EntityManager.
-     *
-     * @return void
      */
     public function testSave(): void
     {
@@ -114,8 +114,6 @@ class GenreRepositoryTest extends TestCase
 
     /**
      * Testuje metodę delete, czy wywołuje remove i flush na EntityManager.
-     *
-     * @return void
      */
     public function testDelete(): void
     {

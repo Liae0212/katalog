@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * TagRepositoryTest.
+ *
+ * Unit tests for the TagRepository form.
+ */
+
 namespace App\Tests\Repository;
 
 use App\Entity\Tag;
@@ -7,15 +13,12 @@ use App\Repository\TagRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
- * Class TagRepositoryTest
+ * Class TagRepositoryTest.
  *
  * Testy integracyjne repozytorium TagRepository.
  */
 class TagRepositoryTest extends KernelTestCase
 {
-    /**
-     * @var TagRepository|null
-     */
     private ?TagRepository $repository;
 
     /**

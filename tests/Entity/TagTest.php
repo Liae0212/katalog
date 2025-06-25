@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * TagTest.
+ *
+ * Unit test for the Tag class.
+ */
+
 namespace App\Tests\Entity;
 
 use App\Entity\Tag;
@@ -12,15 +18,10 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class TagTest extends KernelTestCase
 {
-    /**
-     * @var ValidatorInterface
-     */
     private ValidatorInterface $validator;
 
     /**
      * Ustawia środowisko testowe i inicjalizuje walidator.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -30,8 +31,6 @@ class TagTest extends KernelTestCase
 
     /**
      * Testuje, że początkowo id jest null.
-     *
-     * @return void
      */
     public function testGetIdInitiallyNull(): void
     {
@@ -41,8 +40,6 @@ class TagTest extends KernelTestCase
 
     /**
      * Testuje setter i getter dla tytułu.
-     *
-     * @return void
      */
     public function testSetAndGetTitle(): void
     {
@@ -54,8 +51,6 @@ class TagTest extends KernelTestCase
 
     /**
      * Testuje, że kolekcja zadań jest początkowo pusta.
-     *
-     * @return void
      */
     public function testTasksCollectionInitiallyEmpty(): void
     {
@@ -65,8 +60,6 @@ class TagTest extends KernelTestCase
 
     /**
      * Testuje, że przypisywanie zadań do taga nie działa bezpośrednio z tej strony relacji.
-     *
-     * @return void
      */
     public function testCanAssignTasks(): void
     {
