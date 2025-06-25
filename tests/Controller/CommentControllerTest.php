@@ -6,7 +6,6 @@
  * This file contains functional tests for the CommentController.
  *
  * @author
- * @license
  */
 
 namespace App\Tests\Controller;
@@ -163,8 +162,10 @@ class CommentControllerTest extends WebTestCase
 
     /**
      * Tworzy i zwraca kategorię testową.
+     *
+     * @return Category
      */
-    private function createCategory(): Category
+    private function createCategory()
     {
         $category = new Category();
         $category->setTitle('Test Category');

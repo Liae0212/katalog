@@ -88,8 +88,10 @@ class TaskServiceTest extends KernelTestCase
 
     /**
      * Create a User entity.
+     *
+     * @return User
      */
-    private function createUser(): User
+    private function createUser()
     {
         $user = new User();
         $user->setEmail('test_user@example.com');
@@ -104,8 +106,10 @@ class TaskServiceTest extends KernelTestCase
 
     /**
      * Create a Category entity.
+     *
+     * @return Category
      */
-    private function createCategory(): Category
+    private function createCategory()
     {
         $category = new Category();
         $category->setTitle('Test Category');
@@ -118,8 +122,13 @@ class TaskServiceTest extends KernelTestCase
 
     /**
      * Create a Task entity linked to a User and a Category.
+     *
+     * @param User     $user     The user assigned to the task
+     * @param Category $category The category associated with the task
+     *
+     * @return Task
      */
-    private function createTask(User $user, Category $category): Task
+    private function createTask(User $user, Category $category)
     {
         $task = new Task();
         $task->setTitle('Test Task');
@@ -134,8 +143,12 @@ class TaskServiceTest extends KernelTestCase
 
     /**
      * Create a Tag entity.
+     *
+     * @param string $title The tag title
+     *
+     * @return Tag
      */
-    private function createTag(string $title = 'Tag 1'): Tag
+    private function createTag(string $title = 'Tag 1')
     {
         $tag = new Tag();
         $tag->setTitle($title);

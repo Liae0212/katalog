@@ -139,8 +139,10 @@ class UserControllerTest extends WebTestCase
     /**
      * Pobiera pierwszego użytkownika z bazy, jeśli nie istnieje,
      * tworzy nowego użytkownika testowego i zwraca go.
+     *
+     * @return User
      */
-    private function getFirstUser(): User
+    private function getFirstUser()
     {
         $user = $this->userRepository->findOneBy([]);
         if (!$user) {

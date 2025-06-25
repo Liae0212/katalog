@@ -1,46 +1,7 @@
 
-Found 0 of 65 files that can be fixed in 2.867 seconds, 20.00 MB memory used
-   1) tests/Controller/ArtistControllerTest.php (no_superfluous_phpdoc_tags, phpdoc_trim)
-   2) tests/Controller/CategoryControllerTest.php (no_superfluous_phpdoc_tags, phpdoc_trim)
-   3) tests/Controller/CommentControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_separation, phpdoc_trim)
-   4) tests/Controller/GenreControllerTest.php (blank_line_after_opening_tag, phpdoc_summary)
-   5) tests/Controller/RegistrationControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-   6) tests/Controller/SecurityControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-   7) tests/Controller/TagControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-   8) tests/Controller/TaskControllerTest.php (blank_line_after_opening_tag, phpdoc_summary)
-   9) tests/Controller/UserControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim)
-  10) tests/DataFixtures/AbstractBaseFixturesTest.php (class_definition, no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, global_namespace_import, phpdoc_summary, phpdoc_trim, no_unused_imports)
-  11) tests/DataFixtures/ArtistFixturesTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  12) tests/DataFixtures/CategoryFixturesTest.php (function_declaration, no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  13) tests/DataFixtures/CommentFixturesTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  14) tests/DataFixtures/GenreFixturesTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  15) tests/DataFixtures/TaskFixturesTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, no_unused_imports, blank_lines_before_namespace)
-  16) tests/DataFixtures/UserFixturesTest.php (function_declaration, no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  17) tests/Entity/ArtistTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, global_namespace_import, phpdoc_summary, phpdoc_trim, no_unused_imports, blank_lines_before_namespace)
-  18) tests/Entity/CategoryTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, global_namespace_import, phpdoc_summary, phpdoc_trim, no_unused_imports, blank_lines_before_namespace)
-  19) tests/Entity/CommentTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  20) tests/Entity/GenreTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  21) tests/Entity/GuestUserTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  22) tests/Entity/TagTest.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  23) tests/Entity/TaskTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  24) tests/Entity/UserTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  25) tests/Form/DataTransformer/TagsDataTransformerTest.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, yoda_style, phpdoc_trim, blank_lines_before_namespace)
-  26) tests/Form/Type/RegistrationTypeTest.php (blank_line_after_opening_tag, phpdoc_summary)
-  27) tests/Repository/ArtistRepositoryTest.php (phpdoc_annotation_without_dot, fully_qualified_strict_types, no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  28) tests/Repository/CategoryRepositoryTest.php (phpdoc_annotation_without_dot, no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  29) tests/Repository/GenreRepositoryTest.php (phpdoc_annotation_without_dot, no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  30) tests/Repository/GuestUserRepositoryTest.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  31) tests/Repository/TagRepositoryTest.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
-  32) tests/Service/ArtistServiceTest.php (increment_style, no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary)
-  33) tests/Service/CategoryServiceTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_trim)
-  34) tests/Service/CommentServiceTest.php (phpdoc_annotation_without_dot, increment_style, no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim)
-  35) tests/Service/GenreServiceTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  36) tests/Service/GuestUserServiceTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  37) tests/Service/TagServiceTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  38) tests/Service/TaskServiceTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, no_unused_imports)
-  39) tests/Service/UserServiceTest.php (increment_style, no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
+Found 0 of 65 files that can be fixed in 2.658 seconds, 20.00 MB memory used
 
-Found 39 of 40 files that can be fixed in 2.188 seconds, 20.00 MB memory used
+Found 0 of 40 files that can be fixed in 1.902 seconds, 20.00 MB memory used
 WARNING: The Symfony standard uses 1 deprecated sniff
 -------------------------------------------------------------------------------
 -  Generic.Functions.CallTimePassByReference
@@ -54,16 +15,87 @@ WARNING: The Symfony standard uses 1 deprecated sniff
    This sniff has been deprecated since v3.12.1 and will be removed in v4.0.0.
 
 Deprecated sniffs are still run, but will stop working at some point in the future.
+
+
+FILE: /home/wwwroot/app/tests/Controller/CategoryControllerTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 151 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Controller/CommentControllerTest.php
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   8 | ERROR | [x] Group annotations together so that annotations of the same type immediately follow each other, and annotations of a different type are separated by a single blank
+     |       |     line
+ 166 | ERROR | [ ] Missing @return tag in function comment
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Controller/UserControllerTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 142 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/tests/DataFixtures/AbstractBaseFixturesTest.php
-----------------------------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
-----------------------------------------------------------------------------------------
- 65 | ERROR | Declare public methods first,then protected ones and finally private ones
-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+FOUND 20 ERRORS AFFECTING 19 LINES
+-----------------------------------------------------------------------------------------
+  30 | ERROR | Missing @return tag in function comment
+  33 | ERROR | Use parentheses when instantiating classes
+  54 | ERROR | Missing @return tag in function comment
+  55 | ERROR | Declare public methods first,then protected ones and finally private ones
+  78 | ERROR | Doc comment for parameter "$name" missing
+  78 | ERROR | Doc comment for parameter "$entity" missing
+  90 | ERROR | Use parentheses when instantiating classes
+ 103 | ERROR | Missing doc comment for function persist()
+ 108 | ERROR | Missing doc comment for function flush()
+ 113 | ERROR | Missing doc comment for function find()
+ 117 | ERROR | Missing doc comment for function remove()
+ 121 | ERROR | Missing doc comment for function merge()
+ 125 | ERROR | Missing doc comment for function clear()
+ 129 | ERROR | Missing doc comment for function detach()
+ 133 | ERROR | Missing doc comment for function refresh()
+ 137 | ERROR | Missing doc comment for function getRepository()
+ 141 | ERROR | Missing doc comment for function getClassMetadata()
+ 145 | ERROR | Missing doc comment for function getMetadataFactory()
+ 149 | ERROR | Missing doc comment for function initializeObject()
+ 153 | ERROR | Missing doc comment for function contains()
+-----------------------------------------------------------------------------------------
 
-Time: 4.46 secs; Memory: 12MB
+
+FILE: /home/wwwroot/app/tests/Service/CommentServiceTest.php
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+ 147 | ERROR | Missing @return tag in function comment
+ 162 | ERROR | Missing @return tag in function comment
+ 177 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Service/TaskServiceTest.php
+----------------------------------------------------------------------
+FOUND 7 ERRORS AFFECTING 6 LINES
+----------------------------------------------------------------------
+  91 | ERROR | Missing @return tag in function comment
+ 107 | ERROR | Missing @return tag in function comment
+ 119 | ERROR | Doc comment for parameter "$user" missing
+ 119 | ERROR | Doc comment for parameter "$category" missing
+ 121 | ERROR | Missing @return tag in function comment
+ 135 | ERROR | Doc comment for parameter "$title" missing
+ 137 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
+
+Time: 4.48 secs; Memory: 12MB
 
  ------- -------- ---- ---------------------- 
   State   Domain   Id   Message Preview (en)  
@@ -74,7 +106,7 @@ Time: 4.46 secs; Memory: 12MB
  ------- -------- ---- ---------------------- ------------------------------- 
 
 [notice] Migrating up to DoctrineMigrations\Version20250510125511
-[notice] finished in 2011.6ms, used 26M memory, 1 migrations executed, 18 sql queries
+[notice] finished in 1655.5ms, used 26M memory, 1 migrations executed, 18 sql queries
 
  [OK] Successfully migrated to version: DoctrineMigrations\Version20250510125511                                        
 

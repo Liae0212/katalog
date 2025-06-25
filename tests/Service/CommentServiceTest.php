@@ -144,8 +144,10 @@ class CommentServiceTest extends KernelTestCase
 
     /**
      * Create a user entity.
+     *
+     * @return User
      */
-    private function createUser(): User
+    private function createUser()
     {
         $user = new User();
         $user->setEmail('testuser@example.com');
@@ -159,8 +161,10 @@ class CommentServiceTest extends KernelTestCase
 
     /**
      * Create a category entity.
+     *
+     * @return Category
      */
-    private function createCategory(): Category
+    private function createCategory()
     {
         $category = new Category();
         $category->setTitle('Test Category');
@@ -173,9 +177,11 @@ class CommentServiceTest extends KernelTestCase
     /**
      * Create a task entity linked to a category.
      *
-     * @param Category $category the category entity
+     * @param Category $category The category entity
+     *
+     * @return Task
      */
-    private function createTask(Category $category): Task
+    private function createTask(Category $category)
     {
         $task = new Task();
         $task->setTitle('Test Task');

@@ -148,8 +148,10 @@ class CategoryControllerTest extends WebTestCase
 
     /**
      * Pomocnicza metoda do pobrania pierwszej kategorii lub jej utworzenia.
+     *
+     * @return Category
      */
-    private function getFirstCategory(): Category
+    private function getFirstCategory()
     {
         $category = $this->categoryRepository->findOneBy([]);
         if (!$category) {
