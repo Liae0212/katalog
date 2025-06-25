@@ -18,26 +18,6 @@ use Doctrine\ORM\EntityManagerInterface;
 class CategoryService implements CategoryServiceInterface
 {
     /**
-     * Category repository.
-     */
-    private CategoryRepository $categoryRepository;
-
-    /**
-     * Task repository.
-     */
-    private TaskRepository $taskRepository; // Add this line
-
-    /**
-     * Paginator.
-     */
-    private PaginatorInterface $paginator;
-
-    /**
-     * Entity Manager.
-     */
-    private EntityManagerInterface $entityManager;
-
-    /**
      * Constructor.
      *
      * @param CategoryRepository     $categoryRepository Category repository
@@ -45,12 +25,8 @@ class CategoryService implements CategoryServiceInterface
      * @param PaginatorInterface     $paginator          Paginator
      * @param EntityManagerInterface $entityManager      Entity Manager
      */
-    public function __construct(CategoryRepository $categoryRepository, TaskRepository $taskRepository, PaginatorInterface $paginator, EntityManagerInterface $entityManager)
+    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator, private readonly EntityManagerInterface $entityManager)
     {
-        $this->categoryRepository = $categoryRepository;
-        $this->taskRepository = $taskRepository;
-        $this->paginator = $paginator;
-        $this->entityManager = $entityManager;
     }
 
     /**
@@ -102,7 +78,7 @@ class CategoryService implements CategoryServiceInterface
         try {
             $result = $this->taskRepository->countByCategory($category);
 
-            return !($result > 0);
+            return $result <= 0;
         } catch (NoResultException|NonUniqueResultException) {
             return false;
         }

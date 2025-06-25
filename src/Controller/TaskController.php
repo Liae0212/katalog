@@ -28,21 +28,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 #[Route('/task')]
 class TaskController extends AbstractController
 {
-    /**
-     * Task service.
-     */
-    private TaskServiceInterface $taskService;
-
-    /**
-     * Translator.
-     */
-    private TranslatorInterface $translator;
-
-    /**
-     * Comment service.
-     */
-    private CommentService $commentService;
-
+    public $requestStack;
+    public $guestUserService;
+    public $taskRepository;
+    public $tokenStorage;
     /**
      * Constructor.
      *
@@ -50,13 +39,9 @@ class TaskController extends AbstractController
      * @param TranslatorInterface  $translator     Translator
      * @param CommentService       $commentService Comment service
      */
-    public function __construct(TaskServiceInterface $taskService, TranslatorInterface $translator, CommentService $commentService)
+    public function __construct(private readonly TaskServiceInterface $taskService, private readonly TranslatorInterface $translator, private readonly CommentService $commentService)
     {
-        $this->taskService = $taskService;
-        $this->translator = $translator;
-        $this->commentService = $commentService;
     }
-
     /**
      * Index action.
      *
@@ -80,7 +65,6 @@ class TaskController extends AbstractController
             'pagination' => $pagination,
         ]);
     }
-
     /**
      * Show action.
      *
@@ -95,7 +79,6 @@ class TaskController extends AbstractController
             'task' => $task,
         ]);
     }
-
     /**
      * Edit action.
      *
@@ -136,7 +119,6 @@ class TaskController extends AbstractController
             ]
         );
     }
-
     /**
      * Create action.
      *
@@ -162,7 +144,7 @@ class TaskController extends AbstractController
         );
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            if (!$this->getUser()) {
+            if (!$this->getUser() instanceof \Symfony\Component\Security\Core\User\UserInterface) {
                 $email = $this->requestStack->getSession()->get('email');
                 $guestUser = new GuestUser();
                 $guestUser->setEmail($email);
@@ -181,7 +163,6 @@ class TaskController extends AbstractController
             ['form' => $form->createView()]
         );
     }
-
     /**
      * Delete action.
      *
@@ -221,7 +202,6 @@ class TaskController extends AbstractController
             ]
         );
     }
-
     /**
      * View action.
      *
@@ -259,7 +239,6 @@ class TaskController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
     /**
      * Get filters from request.
      *
@@ -271,10 +250,6 @@ class TaskController extends AbstractController
      */
     private function getFilters(Request $request): array
     {
-        $filters = [];
-        $filters['category_id'] = $request->query->getInt('filters_category_id');
-        $filters['tag_id'] = $request->query->getInt('filters_tag_id');
-
-        return $filters;
+        return ['category_id' => $request->query->getInt('filters_category_id'), 'tag_id' => $request->query->getInt('filters_tag_id')];
     }
 }

@@ -27,7 +27,7 @@ class TaskFixtures extends AbstractBaseFixtures implements DependentFixtureInter
      */
     public function loadData(): void
     {
-        if (null === $this->manager || null === $this->faker) {
+        if (!$this->manager instanceof \Doctrine\Persistence\ObjectManager || !$this->faker instanceof \Faker\Generator) {
             return;
         }
 
@@ -45,26 +45,26 @@ class TaskFixtures extends AbstractBaseFixtures implements DependentFixtureInter
                 )
             );
             /** @var Category $category */
-            $category = $this->getRandomReference('categories');
+            $category = $this->getRandomReference('categories', Category::class);
             $task->setCategory($category);
 
             /** @var Artist $artist */
-            $artist = $this->getRandomReference('artists');
+            $artist = $this->getRandomReference('artists', Artist::class);
             $task->setArtist($artist);
 
             /** @var Genre $genre */
-            $genre = $this->getRandomReference('genres');
+            $genre = $this->getRandomReference('genres', Genre::class);
             $task->setGenre($genre);
 
+            /** @var User $user */
+            $user = $this->getRandomReference('users', User::class);
+            $task->setUsers($user);
+
             /** @var array<Tag> $tags */
-            $tags = $this->getRandomReferences('tags', $this->faker->numberBetween(0, 5));
+            $tags = $this->getRandomReferenceList('tags', Tag::class, $this->faker->numberBetween(0, 5));
             foreach ($tags as $tag) {
                 $task->addTag($tag);
             }
-
-            /** @var User $user */
-            $user = $this->getRandomReference('users');
-            $task->setUsers($user);
 
             return $task;
         });

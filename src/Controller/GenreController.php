@@ -23,23 +23,14 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 class GenreController extends AbstractController
 {
     /**
-     * Genre service.
-     */
-    private GenreServiceInterface $genreService;
-    private TranslatorInterface $translator;
-
-    /**
      * Constructor.
      *
      * @param GenreServiceInterface $genreService Genre service
      * @param TranslatorInterface   $translator   Translator
      */
-    public function __construct(GenreServiceInterface $genreService, TranslatorInterface $translator)
+    public function __construct(private readonly GenreServiceInterface $genreService, private readonly TranslatorInterface $translator)
     {
-        $this->genreService = $genreService;
-        $this->translator = $translator;
     }
-
     /**
      * Index action.
      *
@@ -56,7 +47,6 @@ class GenreController extends AbstractController
 
         return $this->render('genre/index.html.twig', ['pagination' => $pagination]);
     }
-
     /**
      * Show action.
      *
@@ -74,7 +64,6 @@ class GenreController extends AbstractController
     {
         return $this->render('genre/show.html.twig', ['genre' => $genre]);
     }
-
     /**
      * Create action.
      *
@@ -110,7 +99,6 @@ class GenreController extends AbstractController
             ['form' => $form->createView()]
         );
     }
-
     /**
      * Delete action.
      *
@@ -161,7 +149,6 @@ class GenreController extends AbstractController
             ]
         );
     }
-
     /**
      * Edit action.
      *

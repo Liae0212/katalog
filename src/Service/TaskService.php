@@ -16,26 +16,6 @@ use Knp\Component\Pager\PaginatorInterface;
 class TaskService implements TaskServiceInterface
 {
     /**
-     * Category service.
-     */
-    private CategoryServiceInterface $categoryService;
-
-    /**
-     * Paginator.
-     */
-    private PaginatorInterface $paginator;
-
-    /**
-     * Tag service.
-     */
-    private TagServiceInterface $tagService;
-
-    /**
-     * Task repository.
-     */
-    private TaskRepository $taskRepository;
-
-    /**
      * Constructor.
      *
      * @param CategoryServiceInterface $categoryService Category service
@@ -43,12 +23,8 @@ class TaskService implements TaskServiceInterface
      * @param TagServiceInterface      $tagService      Tag service
      * @param TaskRepository           $taskRepository  Task repository
      */
-    public function __construct(CategoryServiceInterface $categoryService, PaginatorInterface $paginator, TagServiceInterface $tagService, TaskRepository $taskRepository)
+    public function __construct(private readonly CategoryServiceInterface $categoryService, private readonly PaginatorInterface $paginator, private readonly TagServiceInterface $tagService, private readonly TaskRepository $taskRepository)
     {
-        $this->categoryService = $categoryService;
-        $this->paginator = $paginator;
-        $this->tagService = $tagService;
-        $this->taskRepository = $taskRepository;
     }
 
     /**

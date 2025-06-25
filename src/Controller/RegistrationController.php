@@ -20,16 +20,6 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class RegistrationController extends AbstractController
 {
     /**
-     * User service.
-     */
-    private UserServiceInterface $userService;
-
-    /**
-     * Translator.
-     */
-    private TranslatorInterface $translator;
-
-    /**
      * RegistrationController constructor.
      *
      * @param UserServiceInterface $userService User service
@@ -37,10 +27,8 @@ class RegistrationController extends AbstractController
      *
      * @return void
      */
-    public function __construct(UserServiceInterface $userService, TranslatorInterface $translator)
+    public function __construct(private readonly UserServiceInterface $userService, private readonly TranslatorInterface $translator)
     {
-        $this->userService = $userService;
-        $this->translator = $translator;
     }
 
     /**

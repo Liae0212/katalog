@@ -166,10 +166,8 @@ class Genre
      */
     public function removeTask(Task $task): void
     {
-        if ($this->tasks->removeElement($task)) {
-            if ($task->getGenre() === $this) {
-                $task->setGenre(null);
-            }
+        if ($this->tasks->removeElement($task) && $task->getGenre() === $this) {
+            $task->setGenre(null);
         }
     }
 }

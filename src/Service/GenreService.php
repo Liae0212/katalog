@@ -19,25 +19,6 @@ use Doctrine\ORM\EntityManagerInterface;
 class GenreService implements GenreServiceInterface
 {
     /**
-     * Genre repository.
-     */
-    private GenreRepository $genreRepository;
-    /**
-     * Task repository.
-     */
-    private TaskRepository $taskRepository;
-
-    /**
-     * Paginator.
-     */
-    private PaginatorInterface $paginator;
-
-    /**
-     * Entity Manager.
-     */
-    private EntityManagerInterface $entityManager;
-
-    /**
      * Constructor.
      *
      * @param GenreRepository        $genreRepository Genre repository
@@ -45,12 +26,8 @@ class GenreService implements GenreServiceInterface
      * @param PaginatorInterface     $paginator       Paginator
      * @param EntityManagerInterface $entityManager   Entity Manager
      */
-    public function __construct(GenreRepository $genreRepository, TaskRepository $taskRepository, PaginatorInterface $paginator, EntityManagerInterface $entityManager)
+    public function __construct(private readonly GenreRepository $genreRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator, private readonly EntityManagerInterface $entityManager)
     {
-        $this->genreRepository = $genreRepository;
-        $this->taskRepository = $taskRepository;
-        $this->paginator = $paginator;
-        $this->entityManager = $entityManager;
     }
 
     /**
@@ -102,7 +79,7 @@ class GenreService implements GenreServiceInterface
         try {
             $result = $this->taskRepository->countByGenre($genre);
 
-            return !($result > 0);
+            return $result <= 0;
         } catch (NoResultException|NonUniqueResultException) {
             return false;
         }

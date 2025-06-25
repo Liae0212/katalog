@@ -12,8 +12,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Comment.
- *
- * @psalm-suppress MissingConstructor
  */
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
 #[ORM\Table(name: 'comments')]
@@ -67,7 +65,7 @@ class Comment
     /**
      * Getter for Content.
      *
-     * @return string|null The content.
+     * @return string|null The content
      */
     public function getContent(): ?string
     {
@@ -77,7 +75,7 @@ class Comment
     /**
      * Setter for Content.
      *
-     * @param string $content The content to set.
+     * @param string $content The content to set
      *
      * @return $this
      */
@@ -91,7 +89,7 @@ class Comment
     /**
      * Getter for Author.
      *
-     * @return User|null The author.
+     * @return User|null The author
      */
     public function getAuthor(): ?User
     {
@@ -101,7 +99,7 @@ class Comment
     /**
      * Setter for Author.
      *
-     * @param User|null $author The author to set.
+     * @param User|null $author The author to set
      *
      * @return $this
      */
@@ -115,7 +113,7 @@ class Comment
     /**
      * Getter for Nick.
      *
-     * @return string|null The nick.
+     * @return string|null The nick
      */
     public function getNick(): ?string
     {
@@ -125,7 +123,7 @@ class Comment
     /**
      * Setter for Nick.
      *
-     * @param string $nick The nick to set.
+     * @param string $nick The nick to set
      *
      * @return $this
      */
@@ -139,7 +137,7 @@ class Comment
     /**
      * Getter for Task.
      *
-     * @return Task|null The task.
+     * @return Task|null The task
      */
     public function getTask(): ?Task
     {
@@ -149,9 +147,7 @@ class Comment
     /**
      * Setter for Task.
      *
-     * @param Task|null $task The task to set.
-     *
-     * @return void
+     * @param Task|null $task The task to set
      */
     public function setTask(?Task $task): void
     {

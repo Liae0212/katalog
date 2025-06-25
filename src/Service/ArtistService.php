@@ -18,26 +18,6 @@ use Doctrine\ORM\EntityManagerInterface;
 class ArtistService implements ArtistServiceInterface
 {
     /**
-     * Artist repository.
-     */
-    private ArtistRepository $artistRepository;
-
-    /**
-     * Task repository.
-     */
-    private TaskRepository $taskRepository;
-
-    /**
-     * Paginator.
-     */
-    private PaginatorInterface $paginator;
-
-    /**
-     * Entity Manager.
-     */
-    private EntityManagerInterface $entityManager;
-
-    /**
      * Constructor.
      *
      * @param ArtistRepository       $artistRepository Artist repository
@@ -45,12 +25,8 @@ class ArtistService implements ArtistServiceInterface
      * @param PaginatorInterface     $paginator        Paginator
      * @param EntityManagerInterface $entityManager    Entity Manager
      */
-    public function __construct(ArtistRepository $artistRepository, TaskRepository $taskRepository, PaginatorInterface $paginator, EntityManagerInterface $entityManager)
+    public function __construct(private readonly ArtistRepository $artistRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator, private readonly EntityManagerInterface $entityManager)
     {
-        $this->artistRepository = $artistRepository;
-        $this->taskRepository = $taskRepository;
-        $this->paginator = $paginator;
-        $this->entityManager = $entityManager;
     }
 
     /**
@@ -102,7 +78,7 @@ class ArtistService implements ArtistServiceInterface
         try {
             $result = $this->taskRepository->countByArtist($artist);
 
-            return !($result > 0);
+            return $result <= 0;
         } catch (NoResultException|NonUniqueResultException) {
             return false;
         }

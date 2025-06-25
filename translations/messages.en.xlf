@@ -390,6 +390,18 @@
                       <source>Tags</source>
                       <target>What tags</target>
                     </trans-unit>
+         <trans-unit id="E-mail">
+                             <source>E-mail</source>
+                             <target>Mail</target>
+                           </trans-unit>
+                <trans-unit id="Password">
+                              <source>Password</source>
+                              <target>Enter password</target>
+                            </trans-unit>
+                <trans-unit id="Repeat password">
+                              <source>Repeat password</source>
+                              <target>Password again</target>
+                            </trans-unit>
 
     </body>
   </file>

@@ -24,21 +24,13 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 class CategoryController extends AbstractController
 {
     /**
-     * Category service.
-     */
-    private CategoryServiceInterface $categoryService;
-    private TranslatorInterface $translator;
-
-    /**
      * Constructor.
      *
-     * @param CategoryServiceInterface $taskService Task service
+     * @param CategoryServiceInterface $categoryService Task service
      * @param TranslatorInterface      $translator  Translator
      */
-    public function __construct(CategoryServiceInterface $taskService, TranslatorInterface $translator)
+    public function __construct(private readonly CategoryServiceInterface $categoryService, private readonly TranslatorInterface $translator)
     {
-        $this->categoryService = $taskService;
-        $this->translator = $translator;
     }
 
     /**

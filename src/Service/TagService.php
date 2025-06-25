@@ -17,25 +17,13 @@ use Knp\Component\Pager\PaginatorInterface;
 class TagService implements TagServiceInterface
 {
     /**
-     * Tag repository.
-     */
-    private TagRepository $tagRepository;
-
-    /**
-     * Paginator.
-     */
-    private PaginatorInterface $paginator;
-
-    /**
      * TagService constructor.
      *
      * @param TagRepository      $tagRepository Tag repository
      * @param PaginatorInterface $paginator     Paginator
      */
-    public function __construct(TagRepository $tagRepository, PaginatorInterface $paginator)
+    public function __construct(private readonly TagRepository $tagRepository, private readonly PaginatorInterface $paginator)
     {
-        $this->tagRepository = $tagRepository;
-        $this->paginator = $paginator;
     }
 
     /**

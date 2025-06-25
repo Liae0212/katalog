@@ -30,7 +30,7 @@ class GuestUser
     #[ORM\Column(type: 'string', length: 191)]
     #[Assert\NotBlank]
     #[Assert\Email]
-    private ?string $email;
+    private ?string $email = null;
 
     /**
      * Getter for id.

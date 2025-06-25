@@ -163,10 +163,8 @@ class Artist
      */
     public function removeTask(Task $task): void
     {
-        if ($this->tasks->removeElement($task)) {
-            if ($task->getArtist() === $this) {
-                $task->setArtist(null);
-            }
+        if ($this->tasks->removeElement($task) && $task->getArtist() === $this) {
+            $task->setArtist(null);
         }
     }
 }

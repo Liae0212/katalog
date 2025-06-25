@@ -389,6 +389,19 @@
                              <source>Tags</source>
                              <target>Tagi</target>
                            </trans-unit>
+
+               <trans-unit id="E-mail">
+                                           <source>E-mail</source>
+                                           <target>Mail</target>
+                                         </trans-unit>
+                              <trans-unit id="Password">
+                                            <source>Password</source>
+                                            <target>Hasło</target>
+                                          </trans-unit>
+                              <trans-unit id="Repeat password">
+                                            <source>Repeat password</source>
+                                            <target>Powtórz hasło</target>
+                                          </trans-unit>
       </body>
         </file>
       </xliff>

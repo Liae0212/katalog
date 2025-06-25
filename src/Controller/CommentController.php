@@ -25,30 +25,15 @@ use Symfony\Component\Security\Core\Security;
 class CommentController extends AbstractController
 {
     /**
-     * Comment service.
-     */
-    private CommentServiceInterface $commentService;
-
-    /**
-     * Translator.
-     */
-    private TranslatorInterface $translator;
-    private Security $security;
-
-    /**
      * Constructor.
      *
      * @param CommentServiceInterface $commentService Comment service
      * @param TranslatorInterface     $translator     Translator
      * @param Security                $security       Security
      */
-    public function __construct(CommentServiceInterface $commentService, TranslatorInterface $translator, Security $security)
+    public function __construct(private readonly CommentServiceInterface $commentService, private readonly TranslatorInterface $translator, private readonly Security $security)
     {
-        $this->commentService = $commentService;
-        $this->translator = $translator;
-        $this->security = $security;
     }
-
     /**
      * Index action.
      *
@@ -66,7 +51,6 @@ class CommentController extends AbstractController
 
         return $this->render('comment/index.html.twig', ['pagination' => $pagination]);
     }
-
     /**
      * Show action.
      *
@@ -79,7 +63,6 @@ class CommentController extends AbstractController
     {
         return $this->render('comment/show.html.twig', ['comment' => $comment]);
     }
-
     /**
      * Create action.
      *
@@ -117,7 +100,6 @@ class CommentController extends AbstractController
             ['form' => $form->createView()]
         );
     }
-
     /**
      * Edit action.
      *
@@ -159,7 +141,6 @@ class CommentController extends AbstractController
             ]
         );
     }
-
     /**
      * Delete action.
      *

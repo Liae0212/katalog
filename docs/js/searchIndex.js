@@ -701,6 +701,11 @@ Search.appendIndex(
             "summary": "Class\u0020Comment.",
             "url": "classes/App-Entity-Comment.html"
         },                {
+            "fqsen": "\\App\\Entity\\Comment\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Comment\u0020constructor.",
+            "url": "classes/App-Entity-Comment.html#method___construct"
+        },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
             "summary": "Getter\u0020for\u0020the\u0020ID.",
@@ -708,42 +713,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
-            "summary": "Getter\u0020for\u0020Content.",
+            "summary": "Getter\u0020for\u0020the\u0020content.",
             "url": "classes/App-Entity-Comment.html#method_getContent"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetContent\u0028\u0029",
             "name": "setContent",
-            "summary": "Setter\u0020for\u0020Content.",
+            "summary": "Setter\u0020for\u0020the\u0020content.",
             "url": "classes/App-Entity-Comment.html#method_setContent"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetAuthor\u0028\u0029",
             "name": "getAuthor",
-            "summary": "Getter\u0020for\u0020Author.",
+            "summary": "Getter\u0020for\u0020the\u0020author.",
             "url": "classes/App-Entity-Comment.html#method_getAuthor"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetAuthor\u0028\u0029",
             "name": "setAuthor",
-            "summary": "Setter\u0020for\u0020Author.",
+            "summary": "Setter\u0020for\u0020the\u0020author.",
             "url": "classes/App-Entity-Comment.html#method_setAuthor"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetNick\u0028\u0029",
             "name": "getNick",
-            "summary": "Getter\u0020for\u0020Nick.",
+            "summary": "Getter\u0020for\u0020the\u0020nickname.",
             "url": "classes/App-Entity-Comment.html#method_getNick"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetNick\u0028\u0029",
             "name": "setNick",
-            "summary": "Setter\u0020for\u0020Nick.",
+            "summary": "Setter\u0020for\u0020the\u0020nickname.",
             "url": "classes/App-Entity-Comment.html#method_setNick"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetTask\u0028\u0029",
             "name": "getTask",
-            "summary": "Getter\u0020for\u0020Task.",
+            "summary": "Getter\u0020for\u0020the\u0020task.",
             "url": "classes/App-Entity-Comment.html#method_getTask"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetTask\u0028\u0029",
             "name": "setTask",
-            "summary": "Setter\u0020for\u0020Task.",
+            "summary": "Setter\u0020for\u0020the\u0020task.",
             "url": "classes/App-Entity-Comment.html#method_setTask"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003A\u0024id",
@@ -768,7 +773,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003A\u0024author",
             "name": "author",
-            "summary": "Author.",
+            "summary": "User.",
             "url": "classes/App-Entity-Comment.html#property_author"
         },                {
             "fqsen": "\\App\\Entity\\Enum\\UserRole",

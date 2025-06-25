@@ -20,18 +20,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class TaskType extends AbstractType
 {
     /**
-     * Tags data transformer.
-     */
-    private TagsDataTransformer $tagsDataTransformer;
-
-    /**
      * Constructor.
      *
      * @param TagsDataTransformer $tagsDataTransformer Tags data transformer
      */
-    public function __construct(TagsDataTransformer $tagsDataTransformer)
+    public function __construct(private readonly TagsDataTransformer $tagsDataTransformer)
     {
-        $this->tagsDataTransformer = $tagsDataTransformer;
     }
 
     /**
@@ -61,9 +55,7 @@ class TaskType extends AbstractType
             EntityType::class,
             [
                 'class' => Category::class,
-                'choice_label' => function ($category): string {
-                    return $category->getTitle();
-                },
+                'choice_label' => fn($category): string => $category->getTitle(),
                 'label' => 'Category',
                 'placeholder' => 'label.none',
                 'required' => true,

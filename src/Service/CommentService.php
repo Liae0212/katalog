@@ -18,32 +18,14 @@ use Knp\Component\Pager\PaginatorInterface;
 class CommentService implements CommentServiceInterface
 {
     /**
-     * Comment repository.
-     */
-    private CommentRepository $commentRepository;
-
-    /**
-     * Paginator.
-     */
-    private PaginatorInterface $paginator;
-
-    /**
-     * Task Repository.
-     */
-    private TaskRepository $taskRepository;
-
-    /**
      * Constructor.
      *
      * @param CommentRepository  $commentRepository Comment repository
      * @param PaginatorInterface $paginator         Paginator
      * @param TaskRepository     $taskRepository    Task repository
      */
-    public function __construct(CommentRepository $commentRepository, PaginatorInterface $paginator, TaskRepository $taskRepository)
+    public function __construct(private readonly CommentRepository $commentRepository, private readonly PaginatorInterface $paginator, private readonly TaskRepository $taskRepository)
     {
-        $this->commentRepository = $commentRepository;
-        $this->paginator = $paginator;
-        $this->taskRepository = $taskRepository;
     }
 
     /**

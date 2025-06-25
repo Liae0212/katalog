@@ -7,6 +7,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Comment;
 use App\Entity\Task;
+use App\Entity\User;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 /**
@@ -29,11 +30,13 @@ class CommentFixtures extends AbstractBaseFixtures implements DependentFixtureIn
             $comment->setContent($this->faker->sentence);
 
             /** @var Task $task */
-            $task = $this->getRandomReference('tasks');
+            $task = $this->getRandomReference('tasks', Task::class);
             $comment->setTask($task);
 
-            $user = $this->getRandomReference('users');
+            /** @var User $user */
+            $user = $this->getRandomReference('users', User::class);
             $comment->setAuthor($user);
+
             $comment->setNick($this->faker->unique()->word);
 
             return $comment;

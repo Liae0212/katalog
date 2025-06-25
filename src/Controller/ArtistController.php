@@ -23,23 +23,14 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 class ArtistController extends AbstractController
 {
     /**
-     * Artist service.
-     */
-    private ArtistServiceInterface $artistService;
-    private TranslatorInterface $translator;
-
-    /**
      * Constructor.
      *
      * @param ArtistServiceInterface $artistService Artist service
      * @param TranslatorInterface    $translator    Translator
      */
-    public function __construct(ArtistServiceInterface $artistService, TranslatorInterface $translator)
+    public function __construct(private readonly ArtistServiceInterface $artistService, private readonly TranslatorInterface $translator)
     {
-        $this->artistService = $artistService;
-        $this->translator = $translator;
     }
-
     /**
      * Index action.
      *
@@ -56,7 +47,6 @@ class ArtistController extends AbstractController
 
         return $this->render('artist/index.html.twig', ['pagination' => $pagination]);
     }
-
     /**
      * Show action.
      *
@@ -74,7 +64,6 @@ class ArtistController extends AbstractController
     {
         return $this->render('artist/show.html.twig', ['artist' => $artist]);
     }
-
     /**
      * Create action.
      *
@@ -110,7 +99,6 @@ class ArtistController extends AbstractController
             ['form' => $form->createView()]
         );
     }
-
     /**
      * Delete action.
      *
@@ -161,7 +149,6 @@ class ArtistController extends AbstractController
             ]
         );
     }
-
     /**
      * Edit action.
      *

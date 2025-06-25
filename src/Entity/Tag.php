@@ -35,7 +35,7 @@ class Tag
     #[ORM\Column(type: 'string', length: 64)]
     #[Assert\Type('string')]
     #[Assert\NotBlank]
-    private ?string $title;
+    private ?string $title = null;
 
     /**
      * Tasks.
