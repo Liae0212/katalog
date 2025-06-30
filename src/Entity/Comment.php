@@ -37,6 +37,7 @@ class Comment
      * Nick.
      */
     #[ORM\Column(length: 64)]
+    #[Assert\NotBlank]
     private ?string $nick = null;
 
     /**
@@ -128,7 +129,7 @@ class Comment
      *
      * @return $this
      */
-    public function setNick(string $nick): self
+    public function setNick(?string $nick): self
     {
         $this->nick = $nick;
 
